@@ -1,7 +1,7 @@
-import React from 'react';
+import HomePage from "./pages/HomePage";
 
 const App = () => {
-  return <div>Hube E-Commerce</div>;
+  return <HomePage />
 }
 
 export default App;
