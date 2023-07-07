@@ -1,10 +1,16 @@
-import Navbar from "../../components/Navbar";
+import Header from "../../components/Header";
+import Sidebar from "./Sidebar";
+import Slider from "./Slider";
+import './styles.scss'
 
 const HomePage = () => {
     return (
         <div>
-            <Navbar />
-            <div style={{backgroundColor: 'whitesmoke', height: '1000px', marginTop: '70px'}} ></div>
+            <Header/>
+            <div className="homeContainer">
+                <Sidebar/>
+                <Slider/>
+            </div>
         </div>
     )
 }

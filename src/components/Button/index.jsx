@@ -1,10 +1,9 @@
-import styles from './style.module.scss'
+import './styles.scss'
 
 const Button = (props) => {
-    const { buttonContainer, buttonStyle } = styles
     return (
-        <div className={buttonContainer}>
-            <button className={buttonStyle} style={
+        <div className="buttonContainer">
+            <button className="buttonStyle" style={
                 {
                     borderColor: props.borderColor,
                     color: props.textColor,
