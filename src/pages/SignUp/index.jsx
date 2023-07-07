@@ -7,7 +7,7 @@ import loginImage from '../../assets/hube_login.png';
 const SignUpPage = () => {
   return (
     <div className={styles.loginContainer}>
-      <div className={styles.formContainer}>
+      <form className={styles.formContainer}>
         <h2 className={styles.loginTitle}>Create Your Account</h2>
         <div className={styles.inputContainer}>
           <Input
@@ -20,6 +20,7 @@ const SignUpPage = () => {
             inputClassName={styles.input}
             required
             label='Email'
+            type='email'
             placeholder={'Enter your email'}
           />
           <Input
@@ -75,7 +76,7 @@ const SignUpPage = () => {
             </a>
           </p>
         </div>
-      </div>
+      </form>
       <div>
         <img className={styles.loginImage} src={loginImage} alt='login' />
       </div>
