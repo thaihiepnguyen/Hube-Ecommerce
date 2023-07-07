@@ -1,4 +1,6 @@
 .buttonContainer {
+  width: 100%;
+
   .buttonStyle {
     padding: 7px 21px;
     line-height: 1.75;
@@ -7,7 +9,7 @@
     cursor: pointer;
     font-size: 0.9375rem;
     margin: 5px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border: 1px solid lightgray;
     border-radius: 4px;
   }
