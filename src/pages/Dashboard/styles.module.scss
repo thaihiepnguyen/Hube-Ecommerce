@@ -1,28 +1,35 @@
 @import './../../scss/variables.scss';
 
+.container {
+  padding: 0 20px;
+
+  color: $sidebar_text_item;
+}
+
 .title {
   font-size: 26px;
 }
 
 .boardContainer {
   display: flex;
-  margin-top: 50px;
+  margin-top: 30px;
 
   .leftBoard {
     display: flex;
     gap: 30px;
+    width: 80%;
     flex-direction: column;
     padding-right: 100px;
 
     .summary {
       display: flex;
-      justify-content: space-between;
       gap: 40px;
+      padding-right: 20px;
 
       .orders {
         display: flex;
         gap: 20px;
-        min-width: 180px;
+        justify-content: space-between;
         background-color: $order_background;
         padding: 30px 30px;
         border-radius: 20px 5px 20px 5px;
@@ -30,7 +37,7 @@
 
       .profit {
         display: flex;
-        min-width: 200px;
+        justify-content: space-between;
         gap: 20px;
         background-color: $profit_background;
         padding: 30px 30px;
@@ -64,6 +71,7 @@
         color: $new_order_background;
         font-weight: 600;
         letter-spacing: 2px;
+        font-size: 24px;
       }
 
       .orderTitle {
@@ -71,5 +79,20 @@
         font-weight: bold;
       }
     }
+    .salesChart {
+      margin-top: auto;
+    }
+  }
+
+  .rightBoard {
+    width: 40%;
+  }
+
+  .chartHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+    margin-bottom: 20px;
   }
 }
