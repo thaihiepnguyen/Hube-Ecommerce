@@ -1,0 +1,23 @@
+@import './../../scss/variables.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 30px;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  color: $sidebar_text_item;
+
+  &:hover,
+  &:focus {
+    background-color: $border_button;
+    color: $text_white;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+  }
+}

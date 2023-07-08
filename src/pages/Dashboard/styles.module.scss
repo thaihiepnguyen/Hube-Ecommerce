@@ -1,0 +1,75 @@
+@import './../../scss/variables.scss';
+
+.title {
+  font-size: 26px;
+}
+
+.boardContainer {
+  display: flex;
+  margin-top: 50px;
+
+  .leftBoard {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding-right: 100px;
+
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+
+      .orders {
+        display: flex;
+        gap: 20px;
+        min-width: 180px;
+        background-color: $order_background;
+        padding: 30px 30px;
+        border-radius: 20px 5px 20px 5px;
+      }
+
+      .profit {
+        display: flex;
+        min-width: 200px;
+        gap: 20px;
+        background-color: $profit_background;
+        padding: 30px 30px;
+        border-radius: 5px 20px 5px 20px;
+      }
+
+      .icon {
+        color: $new_order_background;
+        background-color: $text_white;
+        border-radius: 15px 5px 15px 5px;
+        padding: 10px;
+      }
+
+      .new {
+        color: $text_white;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        background-color: $new_order_background;
+        border-radius: 10px 5px 10px 5px;
+        padding: 1px 8px;
+      }
+
+      .totalContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .total {
+        color: $new_order_background;
+        font-weight: 600;
+        letter-spacing: 2px;
+      }
+
+      .orderTitle {
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+  }
+}
