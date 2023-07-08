@@ -7,30 +7,14 @@ import { Badge } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const {
-    navbarContainer,
-    wrapper,
-    left,
-    center,
-    right,
-    searchContainer,
-    inputStyle,
-    searchStyle,
-    logoContainer,
-    logoImage,
-    logoTitle,
-    notificationStyle,
-    shoppingCartStyle,
-    rightContainer,
-  } = styles;
   return (
-    <div className={navbarContainer}>
-      <div className={wrapper}>
-        <div className={left}>
-          <div className={logoContainer}>
-            <img className={logoImage} src={logo} alt={'logo'} />
+    <div className={styles.navbarContainer}>
+      <div className={styles.wrapper}>
+        <div className={styles.left}>
+          <div className={styles.logoContainer}>
+            <img className={styles.logoImage} src={logo} alt={'logo'} />
             <img
-              className={logoTitle}
+              className={styles.logoTitle}
               src={logotitle}
               alt={'logo-title'}
               height={80}
@@ -38,29 +22,29 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <div className={center}>
-          <div className={searchContainer}>
+        <div className={styles.center}>
+          <div className={styles.searchContainer}>
             <input
-              className={inputStyle}
+              className={styles.inputStyle}
               placeholder={' What are you looking for?'}
             />
-            <Search className={searchStyle} />
+            <Search className={styles.searchStyle} />
           </div>
         </div>
-        <div className={right}>
-          <div className={rightContainer}>
+        <div className={styles.right}>
+          <div className={styles.rightContainer}>
             <div>
               <Badge
                 badgeContent={1}
                 color='secondary'
-                className={notificationStyle}
+                className={styles.notificationStyle}
               >
                 <NotificationsNone />
               </Badge>
               <Badge
                 badgeContent={2}
                 color='secondary'
-                className={shoppingCartStyle}
+                className={styles.shoppingCartStyle}
               >
                 <ShoppingCart />
               </Badge>

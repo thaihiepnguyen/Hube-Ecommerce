@@ -12,5 +12,9 @@
     background-color: #ffffff;
     border: 1px solid lightgray;
     border-radius: 4px;
+    box-shadow: 0 2px 3px #00000029;
+    &:hover {
+      background-color: whitesmoke;
+    }
   }
 }

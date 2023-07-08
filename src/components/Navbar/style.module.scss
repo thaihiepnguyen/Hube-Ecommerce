@@ -1,10 +1,13 @@
+@import './../../scss/variables.scss';
+
 .navbarContainer {
   min-height: 60px;
-  background-color: #FFFFFF;
+  background-color: $text_white;
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 100%;
-  box-shadow: 3px 5px 3px lightgray;
+  box-shadow: 3px 2px 5px lightgray;
+  z-index: 999999;
   .wrapper {
     padding: 10px 20px;
     display: flex;
@@ -39,6 +42,11 @@
         .searchStyle {
           padding: 10px;
           color: gray;
+          &:hover {
+            background-color: whitesmoke;
+            border-radius: 50%;
+            cursor: pointer;
+          }
         }
         .inputStyle {
           border: none;
@@ -49,6 +57,9 @@
         }
         .inputStyle:focus {
           outline: none;
+        }
+        &:hover {
+          border: 1px solid black;
         }
       }
     }
@@ -66,6 +77,11 @@
           margin-left: 60px;
           position: relative;
           left: 10px;
+          &:hover {
+            background-color: whitesmoke;
+            border-radius: 50%;
+            cursor: pointer;
+          }
         }
         .shoppingCartStyle {
           color: gray;
@@ -73,6 +89,11 @@
           margin-left: 20px;
           position: relative;
           left: 10px;
+          &:hover {
+            background-color: whitesmoke;
+            border-radius: 50%;
+            cursor: pointer;
+          }
         }
       }
     }

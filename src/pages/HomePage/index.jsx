@@ -1,12 +1,19 @@
 import Navbar from "../../components/Navbar";
+import Sidebar from "./Sidebar";
+import styles from './style.module.scss'
+import Slider from "./Slider";
 
 const HomePage = () => {
-    return (
-        <div>
-            <Navbar />
-            <div style={{backgroundColor: 'whitesmoke', height: '1000px', marginTop: '70px'}} ></div>
-        </div>
-    )
+  const { homeContainer, contentContainer } = styles
+  return (
+    <div className={homeContainer}>
+      <Navbar />
+      <div className={contentContainer}>
+        <Sidebar/>
+        <Slider/>
+      </div>
+    </div>
+  )
 }
 
 export default HomePage;

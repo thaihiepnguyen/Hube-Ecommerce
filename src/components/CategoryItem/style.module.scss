@@ -1,0 +1,26 @@
+@import './../../scss/variables.scss';
+
+.categoryContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: dimgray;
+  height: 50px;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    .categoryIcon {
+      padding: 0px 20px;
+    }
+    .categoryName {
+      font-weight: bolder;
+      font-size: medium;
+    }
+  }
+  &:hover {
+    color: $border_button;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 5px;
+  }
+}

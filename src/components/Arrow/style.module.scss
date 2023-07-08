@@ -1,0 +1,39 @@
+@import './../../scss/variables.scss';
+
+.arrowContainerLeft {
+  width: 50px;
+  height: 50px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px #00000029;
+  color: $border_button;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.arrowContainerRight {
+  width: 50px;
+  height: 50px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px #00000029;
+  color: $border_button;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+}
