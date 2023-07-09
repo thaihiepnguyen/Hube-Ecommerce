@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
-import AdminDashboard from '../pages/Admin';
 import SignUpPage from '../pages/SignUp';
 import LoginPage from '../pages/Login';
+import AdminPage from '../pages/Admin';
 
 const router = createBrowserRouter([
   {
@@ -22,27 +22,31 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <AdminDashboard />,
+        element: <AdminPage />,
       },
       {
         path: 'dashboard',
-        element: <AdminDashboard />,
+        element: <AdminPage />,
       },
       {
         path: 'users',
-        element: <div>Admin Users</div>,
+        element: <AdminPage />,
       },
       {
         path: 'products',
-        element: <div>Admin Products</div>,
+        element: <AdminPage />,
       },
       {
         path: 'orders',
-        element: <div>Admin Orders</div>,
+        element: <AdminPage />,
       },
       {
         path: 'categories',
-        element: <div>Admin Categories</div>,
+        element: <AdminPage />,
+      },
+      {
+        path: 'discounts',
+        element: <AdminPage />,
       },
     ],
   },
