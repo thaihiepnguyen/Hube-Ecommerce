@@ -1,12 +1,34 @@
 import styles from './style.module.scss';
-import { NotificationsNone, Search, ShoppingCart } from '@material-ui/icons';
+import {Help, NotificationsNone, Search, ShoppingCart} from '@material-ui/icons';
 import logo from '../../assets/hube_logo.png';
 import logotitle from '../../assets/hube_title.png';
+import defaultAvatar from '../../assets/avatar0.png';
 import Button from '../Button';
 import { Badge } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import Cookies from "universal-cookie/es6";
+import axios from "axios";
+import {useEffect, useState} from "react";
 
 const Navbar = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const cookies = new Cookies();
+    const token = cookies.get('token');
+    if (token) {
+      const url = 'http://localhost:3001/user';
+      axios.get(url, {
+        withCredentials: true
+      })
+      .then(function (response) {
+        setUser(response.data)
+      }).catch((e) => {
+        console.error(e.message); // "oh, no!"
+      })
+    }
+  }, [])
+
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.wrapper}>
@@ -33,9 +55,12 @@ const Navbar = () => {
         </div>
         <div className={styles.right}>
           <div className={styles.rightContainer}>
-            <div>
+            <div className={styles.notificationContainer}>
+              <Badge>
+                <Help className={styles.helpStyle}/>
+              </Badge>
               <Badge
-                badgeContent={1}
+                badgeContent={0}
                 color='secondary'
                 className={styles.notificationStyle}
               >
@@ -49,22 +74,27 @@ const Navbar = () => {
                 <ShoppingCart />
               </Badge>
             </div>
-            <div style={{ display: 'flex' }}>
-              <Link to='/login'>
+            {
+              user? <div style={{display: 'flex', alignItems: 'center'}}>
+                <span style={{fontWeight: 'bolder'}}>Hi, {user?.fullname}</span>
+                <img src={defaultAvatar} width={55} height={55} alt="avt"/>
+              </div> : <div style={{ display: 'flex' }}>
+                <Link to='/login'>
                 <Button borderColor={'#8A2BE2'} textColor={'#4B0082'}>
-                  Login
+                Login
                 </Button>
-              </Link>
-              <Link to='/sign-up'>
+                </Link>
+                <Link to='/sign-up'>
                 <Button
-                  borderColor={'#8A2BE2'}
-                  backgroundColor={'#8A2BE2'}
-                  textColor={'#FFFFFF'}
+                borderColor={'#8A2BE2'}
+                backgroundColor={'#8A2BE2'}
+                textColor={'#FFFFFF'}
                 >
-                  Register
+                Register
                 </Button>
-              </Link>
-            </div>
+                </Link>
+              </div>
+            }
           </div>
         </div>
       </div>

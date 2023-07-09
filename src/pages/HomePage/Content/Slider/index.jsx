@@ -1,7 +1,7 @@
 import styles from './style.module.scss'
 import Arrow from "../../../../components/Arrow";
 import {ArrowLeftOutlined, ArrowRightOutlined} from "@material-ui/icons";
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import Slide from "../../../../components/Slide";
 const Slider = () => {
   const [imageIndex, setImageIndex] = useState(1);

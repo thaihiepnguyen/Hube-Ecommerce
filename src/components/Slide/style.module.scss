@@ -1,4 +1,11 @@
 .styledImage {
   border-radius: 20px;
   box-shadow: 0 6px 12px #00000029;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.styledImageFadeIn {
+  opacity: 1;
 }
