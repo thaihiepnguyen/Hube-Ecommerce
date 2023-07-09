@@ -1,5 +1,19 @@
 @import './../../scss/variables.scss';
 
+@mixin iconNavbarStyles {
+  color: gray;
+  padding: 8px;
+  margin-left: 20px;
+  position: relative;
+  left: 10px;
+  transition: all 0.2s linear;
+  &:hover {
+    background-color: whitesmoke;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
 .navbarContainer {
   min-height: 60px;
   background-color: $text_white;
@@ -71,28 +85,18 @@
         height: 100%;
         width: 100%;
         justify-content: space-between;
-        .notificationStyle {
-          color: gray;
-          padding: 8px;
-          margin-left: 60px;
-          position: relative;
-          left: 10px;
-          &:hover {
-            background-color: whitesmoke;
-            border-radius: 50%;
-            cursor: pointer;
+        min-width: 492px;
+        .notificationContainer {
+          margin-left: 40px;
+          min-width: 180px;
+          .notificationStyle {
+            @include iconNavbarStyles;
           }
-        }
-        .shoppingCartStyle {
-          color: gray;
-          padding: 8px;
-          margin-left: 20px;
-          position: relative;
-          left: 10px;
-          &:hover {
-            background-color: whitesmoke;
-            border-radius: 50%;
-            cursor: pointer;
+          .shoppingCartStyle {
+            @include iconNavbarStyles;
+          }
+          .helpStyle {
+            @include iconNavbarStyles;
           }
         }
       }

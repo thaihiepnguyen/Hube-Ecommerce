@@ -13,8 +13,11 @@
     border: 1px solid lightgray;
     border-radius: 4px;
     box-shadow: 0 2px 3px #00000029;
+    transition: all 0.2s linear;
+    opacity: 0.95;
     &:hover {
       background-color: whitesmoke;
+      opacity: 1;
     }
   }
 }

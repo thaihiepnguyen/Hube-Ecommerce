@@ -1,19 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Input from '../../components/Input';
 import styles from './style.module.scss';
 import Button from '../../components/Button';
 import loginImage from '../../assets/hube_login.png';
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
+  const [data, setData] = useState({
+    fullname: "",
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate()
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
+  async function handleSubmit(e) {
+    e.preventDefault()
+    try {
+      const url = 'http://localhost:3001/sign-up';
+      const {data: res} = await axios.post(url, data);
+      navigate('/login')
+    }catch (error) {
+      if (error.response.status === 400) {
+        console.log(error.response.data.message)
+      }
+    }
+  }
   return (
     <div className={styles.loginContainer}>
-      <form className={styles.formContainer}>
+      <form className={styles.formContainer} onSubmit={handleSubmit} method="PORT">
         <h2 className={styles.loginTitle}>Create Your Account</h2>
         <div className={styles.inputContainer}>
           <Input
             inputClassName={styles.input}
             required
             label='Full name'
+            name='fullname'
+            onChange={handleChange}
+            value={data.fullname}
             placeholder={'Enter your full name'}
           />
           <Input
@@ -21,6 +47,9 @@ const SignUpPage = () => {
             required
             label='Email'
             type='email'
+            name='email'
+            onChange={handleChange}
+            value={data.email}
             placeholder={'Enter your email'}
           />
           <Input
@@ -28,6 +57,9 @@ const SignUpPage = () => {
             required
             label='Password'
             type='password'
+            name='password'
+            onChange={handleChange}
+            value={data.password}
             placeholder={'Enter your password'}
           />
           <Input

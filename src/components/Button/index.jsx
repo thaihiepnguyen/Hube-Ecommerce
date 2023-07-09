@@ -8,6 +8,8 @@ const Button = props => {
   return (
     <div className={buttonContainer} onClick={onClick}>
       <button
+        type="submit"
+        formAction="localhost:3001/sign-up"
         className={cx(buttonStyle, buttonClassName)}
         style={{
           borderColor: borderColor,

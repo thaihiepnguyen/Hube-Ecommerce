@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import Sidebar from "./Sidebar";
 import styles from './style.module.scss'
-import Slider from "./Slider";
+import Content from "./Content";
 
 const HomePage = () => {
   const { homeContainer, contentContainer } = styles
@@ -10,7 +10,7 @@ const HomePage = () => {
       <Navbar />
       <div className={contentContainer}>
         <Sidebar/>
-        <Slider/>
+        <Content/>
       </div>
     </div>
   )

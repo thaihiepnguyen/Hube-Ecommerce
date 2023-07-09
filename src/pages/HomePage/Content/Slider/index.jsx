@@ -1,24 +1,28 @@
 import styles from './style.module.scss'
-import Arrow from "../../../components/Arrow";
+import Arrow from "../../../../components/Arrow";
 import {ArrowLeftOutlined, ArrowRightOutlined} from "@material-ui/icons";
-import {useState} from "react";
-import Slide from "../../../components/Slide";
+import {useEffect, useState} from "react";
+import Slide from "../../../../components/Slide";
 const Slider = () => {
   const [imageIndex, setImageIndex] = useState(1);
   function nextImage() {
     if (imageIndex < 3) {
       setImageIndex(imageIndex + 1)
+    } else {
+      setImageIndex(1)
     }
   }
-  function backImage() {
+  function previousImage() {
     if (imageIndex > 1) {
       setImageIndex(imageIndex - 1)
+    } else {
+      setImageIndex(3)
     }
   }
 
   return (
     <div className={styles.sliderContainer}>
-      <Arrow direction="left" onBack={backImage}>
+      <Arrow direction="left" onPrevious={previousImage}>
         <ArrowLeftOutlined/>
       </Arrow>
       <Slide imageIndex={imageIndex}/>

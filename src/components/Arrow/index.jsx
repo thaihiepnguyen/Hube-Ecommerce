@@ -1,9 +1,9 @@
 import styles from './style.module.scss'
 const Arrow = (props) => {
-    const { children, direction, onBack, onNext } = props
+    const { children, direction, onPrevious, onNext } = props
     if (direction === "left") {
         return (
-          <button className={styles.arrowContainerLeft} onClick={onBack}>
+          <button className={styles.arrowContainerLeft} onClick={onPrevious}>
               {children}
           </button>
         )
