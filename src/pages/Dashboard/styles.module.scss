@@ -1,0 +1,98 @@
+@import './../../scss/variables.scss';
+
+.container {
+  padding: 0 20px;
+
+  color: $sidebar_text_item;
+}
+
+.title {
+  font-size: 26px;
+}
+
+.boardContainer {
+  display: flex;
+  margin-top: 30px;
+
+  .leftBoard {
+    display: flex;
+    gap: 30px;
+    width: 80%;
+    flex-direction: column;
+    padding-right: 100px;
+
+    .summary {
+      display: flex;
+      gap: 40px;
+      padding-right: 20px;
+
+      .orders {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        background-color: $order_background;
+        padding: 30px 30px;
+        border-radius: 20px 5px 20px 5px;
+      }
+
+      .profit {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        background-color: $profit_background;
+        padding: 30px 30px;
+        border-radius: 5px 20px 5px 20px;
+      }
+
+      .icon {
+        color: $new_order_background;
+        background-color: $text_white;
+        border-radius: 15px 5px 15px 5px;
+        padding: 10px;
+      }
+
+      .new {
+        color: $text_white;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        background-color: $new_order_background;
+        border-radius: 10px 5px 10px 5px;
+        padding: 1px 8px;
+      }
+
+      .totalContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .total {
+        color: $new_order_background;
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 24px;
+      }
+
+      .orderTitle {
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+    .salesChart {
+      margin-top: auto;
+    }
+  }
+
+  .rightBoard {
+    width: 40%;
+  }
+
+  .chartHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+    margin-bottom: 20px;
+  }
+}
