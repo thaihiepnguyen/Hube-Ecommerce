@@ -8,33 +8,46 @@ import {
     Watch
 } from "@material-ui/icons";
 import CategoryItem from "../../../components/CategoryItem";
+import axios from 'axios';
+import {useEffect, useState} from "react";
+
+const BASE_URL = process.env.REACT_APP_API_URL;
+const categoriesIcon = [
+  <Laptop/>,
+  <Smartphone/>,
+  <Gamepad/>,
+  <ShopOutlined/>,
+  <BrandingWatermark/>,
+  <LocalTaxi/>,
+  <Watch/>,
+  <Toys/>,
+];
+
 const Sidebar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const url = `${BASE_URL}/categories`;
+    axios.get(url, {
+      withCredentials: true
+      })
+      .then(function (response) {
+        setCategories(response.data)
+      }).catch((e) => {
+      console.error(e.message);
+    })
+  }, [])
   return (
     <div className={styles.sidebarContainer}>
-      <CategoryItem categoryName="Laptop">
-        <Laptop/>
-      </CategoryItem>
-      <CategoryItem categoryName="Smartphone & Tablet">
-        <Smartphone/>
-      </CategoryItem>
-      <CategoryItem categoryName="Video Game">
-        <Gamepad/>
-      </CategoryItem>
-      <CategoryItem categoryName="Book & Media">
-        <ShopOutlined/>
-      </CategoryItem>
-      <CategoryItem categoryName="Accessory">
-        <BrandingWatermark/>
-      </CategoryItem>
-      <CategoryItem categoryName="Car & Bike & Bicycle">
-        <LocalTaxi/>
-      </CategoryItem>
-      <CategoryItem categoryName="Watch & Jewelry">
-        <Watch/>
-      </CategoryItem>
-      <CategoryItem categoryName="Toys & Children">
-        <Toys/>
-      </CategoryItem>
+      {
+        categories.map((item, index) => (
+          <div key={item._id}>
+            <CategoryItem categoryName={item.name}>
+              {categoriesIcon[index]}
+            </CategoryItem>
+          </div>
+        ))
+      }
     </div>
   )
 }

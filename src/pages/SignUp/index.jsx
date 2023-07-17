@@ -3,9 +3,10 @@ import Input from '../../components/Input';
 import styles from './style.module.scss';
 import Button from '../../components/Button';
 import loginImage from '../../assets/hube_login.png';
-import axios from "axios";
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
+const BASE_URL = process.env.REACT_APP_API_URL
 const SignUpPage = () => {
   const [data, setData] = useState({
     fullname: "",
@@ -19,7 +20,7 @@ const SignUpPage = () => {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const url = 'http://localhost:3001/sign-up';
+      const url = `${BASE_URL}sign-up`;
       // const {data: res} = await axios.post(url, data);
       await axios.post(url, data);
       navigate('/login')
