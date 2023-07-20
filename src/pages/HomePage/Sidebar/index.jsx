@@ -1,11 +1,12 @@
 import styles from  './style.module.scss';
 import {
-    BrandingWatermark, Gamepad,
-    Laptop,
-    LocalTaxi,
-    ShopOutlined,
-    Smartphone, Toys,
-    Watch
+  BrandingWatermark, Gamepad,
+  Laptop,
+  LocalTaxi,
+  ShopOutlined,
+  Toys,
+  Watch,
+  EvStation, LocalHospital, HomeWork, Bookmark, Build, Sports, Tablet, DesktopMac, Highlight, CardTravel
 } from "@material-ui/icons";
 import CategoryItem from "../../../components/CategoryItem";
 import axios from 'axios';
@@ -13,14 +14,16 @@ import {useEffect, useState} from "react";
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 const categoriesIcon = [
-  <Laptop/>,
-  <Smartphone/>,
   <Gamepad/>,
-  <ShopOutlined/>,
-  <BrandingWatermark/>,
-  <LocalTaxi/>,
-  <Watch/>,
-  <Toys/>,
+  <Laptop/>,
+  <LocalHospital/>,
+  <EvStation/>,
+  <CardTravel/>,
+  <HomeWork/>,
+  <Bookmark/>,
+  <Build/>,
+  <Sports/>,
+  <Highlight/>,
 ];
 
 const Sidebar = () => {

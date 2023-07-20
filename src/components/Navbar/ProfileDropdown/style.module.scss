@@ -1,0 +1,31 @@
+@import './../../../scss/variables.scss';
+
+.menusContainer {
+  position: fixed;
+  z-index: 99999;
+  padding: 25px 15px;
+  width: 250px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 3px 3px 3px lightgray;
+  right: 10px;
+}
+.menusItem {
+  list-style-type: none;
+  padding: 10px 20px;
+}
+.menusItemContainer {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: dimgray;
+  border-radius: 5px;
+  text-decoration: none;
+  color: dimgray;
+  &:hover {
+    color: $border_button;
+    cursor: pointer;
+    background-color: whitesmoke;
+  }
+}
