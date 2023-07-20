@@ -1,5 +1,5 @@
 import styles from './style.module.scss';
-import {Help, Language, NotificationsNone, Search, ShoppingCart} from '@material-ui/icons';
+import {Language, NotificationsNone, Search, ShoppingCart} from '@material-ui/icons';
 import logo from '../../assets/hube_logo.png';
 import logotitle from '../../assets/hube_title.png';
 import defaultAvatar from '../../assets/avatar0.png';

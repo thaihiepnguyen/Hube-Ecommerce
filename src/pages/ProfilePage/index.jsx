@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import styles from './style.module.scss'
+import Footer from "../../components/Footer";
 
 const ProfilePage = () => {
   const { homeContainer, contentContainer } = styles
@@ -13,6 +14,7 @@ const ProfilePage = () => {
           Bui Tan Sang vs Le Dang Khoa
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
