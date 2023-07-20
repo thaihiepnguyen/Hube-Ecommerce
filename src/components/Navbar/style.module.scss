@@ -6,7 +6,6 @@
   margin-left: 20px;
   position: relative;
   left: 10px;
-  transition: all 0.2s linear;
   &:hover {
     background-color: whitesmoke;
     border-radius: 50%;
@@ -95,7 +94,7 @@
           .shoppingCartStyle {
             @include iconNavbarStyles;
           }
-          .helpStyle {
+          .languageStyle {
             @include iconNavbarStyles;
           }
         }
@@ -104,3 +103,6 @@
   }
 }
 
+.avatarContainer:hover {
+  cursor: pointer;
+}

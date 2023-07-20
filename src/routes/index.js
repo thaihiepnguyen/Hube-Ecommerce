@@ -3,6 +3,7 @@ import HomePage from '../pages/HomePage';
 import SignUpPage from '../pages/SignUp';
 import LoginPage from '../pages/Login';
 import AdminPage from '../pages/Admin';
+import ProfilePage from "../pages/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,19 @@ const router = createBrowserRouter([
     path: '/login',
     element: <LoginPage />,
   },
+  {
+    path: '/profile/:userId',
+    element: <ProfilePage />,
+  },
+  {
+    path: '/settings',
+    element: <LoginPage />,
+  },
+  {
+    path: '/access',
+    element: <LoginPage />,
+  },
+
   {
     path: '/admin',
     children: [

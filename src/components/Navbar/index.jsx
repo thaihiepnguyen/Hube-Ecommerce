@@ -1,5 +1,5 @@
 import styles from './style.module.scss';
-import {Help, NotificationsNone, Search, ShoppingCart} from '@material-ui/icons';
+import {Language, NotificationsNone, Search, ShoppingCart} from '@material-ui/icons';
 import logo from '../../assets/hube_logo.png';
 import logotitle from '../../assets/hube_title.png';
 import defaultAvatar from '../../assets/avatar0.png';
@@ -9,9 +9,11 @@ import { Link } from 'react-router-dom';
 import Cookies from "universal-cookie/es6";
 import axios from "axios";
 import {useEffect, useState} from "react";
+import {ProfileDropdown} from "./ProfileDropdown";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
+  const [isAvatarHovering, setAvatarHovering] = useState(false);
 
   useEffect(() => {
     const cookies = new Cookies();
@@ -28,6 +30,11 @@ const Navbar = () => {
       })
     }
   }, [])
+
+  const handleMouseClick = () => {
+    setAvatarHovering(!isAvatarHovering);
+  }
+
 
   return (
     <div className={styles.navbarContainer}>
@@ -48,7 +55,7 @@ const Navbar = () => {
           <div className={styles.searchContainer}>
             <input
               className={styles.inputStyle}
-              placeholder={' What are you looking for?'}
+              placeholder={' Tìm kiếm sản phẩm...'}
             />
             <Search className={styles.searchStyle} />
           </div>
@@ -56,9 +63,6 @@ const Navbar = () => {
         <div className={styles.right}>
           <div className={styles.rightContainer}>
             <div className={styles.notificationContainer}>
-              <Badge>
-                <Help className={styles.helpStyle}/>
-              </Badge>
               <Badge
                 badgeContent={0}
                 color='secondary'
@@ -73,15 +77,24 @@ const Navbar = () => {
               >
                 <ShoppingCart />
               </Badge>
+              <Badge>
+                <Language className={styles.languageStyle}/>
+              </Badge>
             </div>
             {
-              user? <div style={{display: 'flex', alignItems: 'center'}}>
-                <span style={{fontWeight: 'bolder'}}>Hi, {user?.fullname}</span>
-                <img src={defaultAvatar} width={55} height={55} alt="avt"/>
+              user? <div>
+                <div style={{display: 'flex', alignItems: 'center'}} className={styles.avatarContainer}
+                onClick={handleMouseClick}>
+                  <span style={{fontWeight: 'bolder'}}>Xin chào, {user?.fullname}</span>
+                  <img src={defaultAvatar} width={55} height={55} alt="avt"/>
+                </div>
+                <div>
+                  {isAvatarHovering && <ProfileDropdown userId={user?.userId}/>}
+                </div>
               </div> : <div style={{ display: 'flex' }}>
                 <Link to='/login'>
                 <Button borderColor={'#8A2BE2'} textColor={'#4B0082'}>
-                Login
+                Đăng nhập
                 </Button>
                 </Link>
                 <Link to='/sign-up'>
@@ -90,7 +103,7 @@ const Navbar = () => {
                 backgroundColor={'#8A2BE2'}
                 textColor={'#FFFFFF'}
                 >
-                Register
+                Đăng ký
                 </Button>
                 </Link>
               </div>
