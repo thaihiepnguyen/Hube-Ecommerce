@@ -10,6 +10,7 @@ import Cookies from "universal-cookie/es6";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {ProfileDropdown} from "./ProfileDropdown";
+import {BASE_URL} from "../../App";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -19,14 +20,14 @@ const Navbar = () => {
     const cookies = new Cookies();
     const token = cookies.get('token');
     if (token) {
-      const url = 'http://localhost:3001/user';
+      const url = `${BASE_URL}/user`;
       axios.get(url, {
         withCredentials: true
       })
       .then(function (response) {
         setUser(response.data)
       }).catch((e) => {
-        console.error(e.message); // "oh, no!"
+        console.error(e.message);
       })
     }
   }, [])

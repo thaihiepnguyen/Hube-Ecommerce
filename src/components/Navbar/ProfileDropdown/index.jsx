@@ -5,12 +5,14 @@ import {
   Help,
   NightsStay,
   Settings,
+  ShoppingBasket,
 } from "@material-ui/icons";
 import Cookies from "universal-cookie/es6";
 
 
 const menusIcon = [
   <AccountCircle/>,
+  <ShoppingBasket/>,
   <Settings/>,
   <Help/>,
   <NightsStay/>
@@ -19,6 +21,7 @@ export const ProfileDropdown = (props) => {
   const { userId } = props;
   const menus = [
     {name: 'Thông tin cá nhân', link: `/profile/${userId}`},
+    {name: 'Đơn hàng của tôi', link: `/cart/${userId}`},
     {name: 'Cài đặt và Chính sách', link: '/settings'},
     {name: 'Hỗ trợ và giúp đỡ', link: '/help'},
     {name: 'Chế độ hiển thị', link: '/access'},

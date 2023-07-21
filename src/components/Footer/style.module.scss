@@ -6,7 +6,7 @@
   padding: 30px;
 }
 
-.footerContainer {
+.contentContainer {
   display: flex;
   background-color: whitesmoke;
   border-bottom-style: solid;
@@ -25,4 +25,10 @@
   background-color: whitesmoke;
   padding: 30px;
   font-size: 14px;
+}
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  padding-bottom: 80px;
 }

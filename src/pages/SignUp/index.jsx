@@ -5,8 +5,8 @@ import Button from '../../components/Button';
 import loginImage from '../../assets/hube_login.png';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import {BASE_URL} from "../../App";
 
-const BASE_URL = process.env.REACT_APP_API_URL
 const SignUpPage = () => {
   const [data, setData] = useState({
     fullname: "",
@@ -20,8 +20,7 @@ const SignUpPage = () => {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const url = `${BASE_URL}sign-up`;
-      // const {data: res} = await axios.post(url, data);
+      const url = `${BASE_URL}/sign-up`;
       await axios.post(url, data);
       navigate('/login')
     }catch (error) {

@@ -6,6 +6,7 @@ import loginImage from '../../assets/hube_login.png';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie/es6";
+import {BASE_URL} from "../../App";
 
 const LoginPage = () => {
   const cookies = new Cookies();
@@ -20,7 +21,7 @@ const LoginPage = () => {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const url = 'http://localhost:3001/login';
+      const url = `${BASE_URL}/login`;
       const {data: res} = await axios.post(url, data);
       cookies.set("token", res.token)
       navigate('/')

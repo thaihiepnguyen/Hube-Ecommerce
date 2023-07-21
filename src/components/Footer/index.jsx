@@ -2,8 +2,8 @@ import styles from './style.module.scss'
 
 const Footer = () => {
   return (
-    <div style={{display:"flex", flexDirection: "column", backgroundColor: 'whitesmoke'}}>
-      <div className={styles.footerContainer}>
+    <div className={styles.footerContainer}>
+      <div className={styles.contentContainer}>
         <div className={styles.left}>
           <h3 style={{fontWeight:'bold'}}>Liên hệ</h3>
           <div style={{paddingBottom: 10}}>+ 123-400 123</div>
