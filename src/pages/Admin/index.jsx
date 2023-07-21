@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './style.module.scss';
 import SideBar from '../../components/SideBar';
-import AdminDashboard from '../Dashboard';
-import UserManagement from '../UserManagement';
-import ProductManagement from '../ProductManagement';
-import OrderManagement from '../OrderManagement';
-import CategoryManagement from '../CategoryManagement';
-import DiscountManagement from '../DiscountManagement';
+import AdminDashboard from './Dashboard';
+import UserManagement from './UserManagement';
+import ProductManagement from './ProductManagement';
+import OrderManagement from './OrderManagement';
+import CategoryManagement from './CategoryManagement';
+import DiscountManagement from './DiscountManagement';
 
 const AdminPage = () => {
   const url = window.location.href;

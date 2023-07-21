@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomTable from '../../components/Table';
+import CustomTable from '../../../components/Table';
 
 const OrderManagement = () => {
   const data = [
