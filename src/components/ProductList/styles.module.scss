@@ -1,0 +1,14 @@
+.productsContainer {
+  position: relative;
+}
+
+.productList {
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+  overflow-x: hidden;
+}
+
+.productCardWrapper {
+  flex: 0 0 20%;
+}

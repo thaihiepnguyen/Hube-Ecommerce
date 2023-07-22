@@ -1,0 +1,125 @@
+@import './../../scss/variables.scss';
+
+.cardContainer {
+  border-radius: 10px;
+  background-color: white;
+
+  .image {
+    width: 280px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .cardDetail {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    gap: 5px;
+
+    .categories {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      .category {
+        border-radius: 20px;
+        background-color: #f1f1f1;
+        padding: 5px 10px;
+        font-size: 12px;
+        width: fit-content;
+      }
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 5px 0;
+    }
+
+    .shop {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 550;
+    }
+
+    .priceContainer {
+      display: flex;
+      flex-direction: column;
+      min-height: 50px;
+      gap: 5px;
+    }
+
+    .discount {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .cost {
+        font-size: 12px;
+        text-decoration: line-through;
+        color: gray;
+      }
+
+      .percent {
+        background-color: rgb(51, 183, 161);
+        padding: 3px 10px;
+        font-size: 10px;
+        color: white;
+        border-radius: 10px;
+      }
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 500;
+      color: red;
+      letter-spacing: 2px;
+    }
+
+    .starIcon {
+      color: #ffce3d;
+      width: 15px;
+      height: 15px;
+    }
+
+    .rate {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 5px 0;
+      font-size: 12px;
+    }
+
+    .buttonGroup {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+
+      .button {
+        background-color: $border_button;
+        color: white;
+
+        &:hover {
+          scale: 1.05;
+        }
+      }
+
+      .favorite {
+        color: red;
+
+        .favoriteIcon {
+          border-radius: 5px;
+          padding: 7px;
+          background-color: #f1f1f1;
+        }
+        &:hover {
+          scale: 1.05;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
