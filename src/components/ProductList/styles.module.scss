@@ -6,9 +6,9 @@
   display: flex;
   gap: 20px;
   margin: 10px;
-  overflow-x: hidden;
 }
 
-.productCardWrapper {
-  flex: 0 0 20%;
+.carouselItem {
+  padding-right: 20px;
+  width: 260px !important;
 }

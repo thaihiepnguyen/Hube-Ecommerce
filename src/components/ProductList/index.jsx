@@ -1,45 +1,40 @@
-import React, { useState } from 'react';
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons';
+import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styles from './styles.module.scss';
-import Arrow from '../Arrow';
 import ProductCard from '../ProductCard';
+import { CustomLeftArrow, CustomRightArrow } from '../Arrow';
 
 const ProductList = props => {
   const { label, data } = props;
 
-  const handleClickPrevious = () => {};
-
-  const handleClickNext = () => {};
-
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
-
   return (
     <div className={styles.productsContainer}>
-      <h1>{label}</h1>
-      <Arrow direction='left' onPrevious={handleClickPrevious}>
-        <ArrowLeftOutlined />
-      </Arrow>
-      <div className={styles.productList}>
+      <h2>{label}</h2>
+      <Carousel
+        itemClass={styles.carouselItem}
+        customRightArrow={<CustomRightArrow />}
+        customLeftArrow={<CustomLeftArrow />}
+        responsive={{
+          desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 5,
+            slidesToSlide: 5,
+          },
+          tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 3,
+            slidesToSlide: 3,
+          },
+          mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1,
+          },
+        }}
+      >
         {data.map(item => (
-          <div key={item.id} className={styles.productCardWrapper}>
+          <div key={item.id}>
             <ProductCard
               image={item.image}
               name={item.name}
@@ -53,11 +48,7 @@ const ProductList = props => {
             />
           </div>
         ))}
-      </div>
-
-      <Arrow direction='right' onNext={handleClickNext}>
-        <ArrowRightOutlined />
-      </Arrow>
+      </Carousel>
     </div>
   );
 };

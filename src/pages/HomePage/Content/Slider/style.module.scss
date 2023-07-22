@@ -1,6 +1,7 @@
-.sliderContainer {
-  display: flex;
-  height: 50vh;
-  position: relative;
-  width: 100%;
+.styledImage {
+  border-radius: 20px;
+  height: 400px;
+  box-shadow: 0 6px 12px #00000029;
+  width: 100% !important;
+  transition: all 0.4s linear;
 }
