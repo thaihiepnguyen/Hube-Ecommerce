@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.signature}>
-        © 2023 Hube Company, Inc.
+        © 2023 Hube. All Rights Reserved
       </div>
     </div>
   )

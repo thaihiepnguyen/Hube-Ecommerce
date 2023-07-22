@@ -11,37 +11,64 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import {ProfileDropdown} from "./ProfileDropdown";
 import {BASE_URL} from "../../App";
+import OutsideClickHandler from "react-outside-click-handler/esm/OutsideClickHandler";
+import NotificationDropdown from "./NotiDropdown";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
   const [isAvatarHovering, setAvatarHovering] = useState(false);
+  const [isNotificationClick, setNotificationClick] = useState(false);
+  const [notifications, setNotifications] = useState([
+    'Trang thương mại điện tử Hube, còn được gọi là trang mua sắm trực tuyến hoặc cửa hàng trực tuyến.',
+  ])
 
   useEffect(() => {
     const cookies = new Cookies();
     const token = cookies.get('token');
+    const urlUser = `${BASE_URL}/user`;
+    const urlNoti = `${BASE_URL}/noti/1`;
     if (token) {
-      const url = `${BASE_URL}/user`;
-      axios.get(url, {
-        withCredentials: true
-      })
-      .then(function (response) {
-        setUser(response.data)
-      }).catch((e) => {
-        console.error(e.message);
-      })
+      const axiosRequests = [
+        axios.get(urlUser,{
+          withCredentials: true
+        }),
+        axios.get(urlNoti,{
+          withCredentials: true
+        }),
+      ];
+      Promise.all(axiosRequests)
+        .then((responses) => {
+          const userData = responses[0].data;
+          const notiData = responses[1].data;
+          setUser(userData);
+          setNotifications(prev => [...prev, notiData.templateContent])
+        })
+        .catch((e)=> {
+          console.error(e.message);
+        })
     }
-  }, [])
+  }, []);
 
   const handleMouseClick = () => {
     setAvatarHovering(!isAvatarHovering);
   }
 
+  const handleOutsideClick = () => {
+    setAvatarHovering(false);
+  }
 
+  const handleNotiMouseClick = () => {
+    setNotificationClick(!isNotificationClick);
+  }
+
+  const handleOutsideNotiClick = () => {
+    setNotificationClick(false);
+  };
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <div className={styles.logoContainer}>
+          <a className={styles.logoContainer} href='/'>
             <img className={styles.logoImage} src={logo} alt={'logo'} />
             <img
               className={styles.logoTitle}
@@ -50,7 +77,7 @@ const Navbar = () => {
               height={80}
               width={90}
             />
-          </div>
+          </a>
         </div>
         <div className={styles.center}>
           <div className={styles.searchContainer}>
@@ -65,11 +92,16 @@ const Navbar = () => {
           <div className={styles.rightContainer}>
             <div className={styles.notificationContainer}>
               <Badge
-                badgeContent={0}
+                badgeContent={notifications.length}
                 color='secondary'
                 className={styles.notificationStyle}
               >
-                <NotificationsNone />
+                <OutsideClickHandler onOutsideClick={handleOutsideNotiClick}>
+                  <NotificationsNone style={{position: "relative"}} onClick={handleNotiMouseClick}/>
+                  <div>
+                    {isNotificationClick && <NotificationDropdown noti={notifications}/>}
+                  </div>
+                </OutsideClickHandler>
               </Badge>
               <Badge
                 badgeContent={2}
@@ -83,16 +115,19 @@ const Navbar = () => {
               </Badge>
             </div>
             {
-              user? <div>
-                <div style={{display: 'flex', alignItems: 'center'}} className={styles.avatarContainer}
-                onClick={handleMouseClick}>
-                  <span style={{fontWeight: 'bolder'}}>Xin chào, {user?.fullname}</span>
-                  <img src={defaultAvatar} width={55} height={55} alt="avt"/>
-                </div>
-                <div>
-                  {isAvatarHovering && <ProfileDropdown userId={user?.userId}/>}
-                </div>
-              </div> : <div style={{ display: 'flex' }}>
+              user?
+                <OutsideClickHandler onOutsideClick={handleOutsideClick}>
+                  <div>
+                    <div style={{display: 'flex', alignItems: 'center'}} className={styles.avatarContainer}
+                    onClick={handleMouseClick}>
+                      <span style={{fontWeight: 'bolder'}}>Xin chào, {user?.fullname}</span>
+                      <img src={defaultAvatar} width={55} height={55} alt="avt"/>
+                    </div>
+                    <div>
+                      {isAvatarHovering && <ProfileDropdown userId={user?.userId}/>}
+                    </div>
+                  </div>
+                </OutsideClickHandler>: <div style={{ display: 'flex' }}>
                 <Link to='/login'>
                 <Button borderColor={'#8A2BE2'} textColor={'#4B0082'}>
                 Đăng nhập

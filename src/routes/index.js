@@ -4,6 +4,7 @@ import SignUpPage from '../pages/SignUp';
 import LoginPage from '../pages/Login';
 import AdminPage from '../pages/Admin';
 import ProfilePage from "../pages/ProfilePage";
+import ShoppingCartPage from "../pages/ShoppingCartPage";
 
 const router = createBrowserRouter([
   {
@@ -23,10 +24,20 @@ const router = createBrowserRouter([
     element: <ProfilePage />,
   },
   {
+    path: '/cart/:userId',
+    element: <ShoppingCartPage/>
+  },
+  {
     path: '/settings',
+    element: <HomePage />,
+  },
+  {
+    path: '/help',
+    element: <HomePage />,
   },
   {
     path: '/access',
+    element: <HomePage />,
   },
 
   {

@@ -2,8 +2,9 @@
 
 @mixin iconNavbarStyles {
   color: gray;
-  padding: 8px;
+  padding: 6px;
   margin-left: 20px;
+  height: 25px;
   position: relative;
   left: 10px;
   &:hover {
@@ -39,6 +40,9 @@
           position: absolute;
           left: 40px;
         }
+      }
+      &:hover {
+       cursor: pointer;
       }
     }
     .center {

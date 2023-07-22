@@ -1,0 +1,21 @@
+.notificationItemContainer {
+  width: 100%;
+  height:70px;
+  border-bottom: 1.5px solid lightgray;
+  .content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    &:hover {
+      background-color: whitesmoke;
+      border-radius: 10px;
+    }
+    .notificationItemIcon {
+      font-size: 40px;
+      flex: 1;
+    }
+    .notificationItemContent {
+      flex: 7;
+    }
+  }
+}

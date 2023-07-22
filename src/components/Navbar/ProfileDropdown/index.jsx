@@ -11,18 +11,18 @@ import Cookies from "universal-cookie/es6";
 
 
 const menusIcon = [
-  <AccountCircle/>,
-  <ShoppingBasket/>,
-  <Settings/>,
-  <Help/>,
-  <NightsStay/>
+  <AccountCircle style={{padding: 5}}/>,
+  <ShoppingBasket style={{padding: 5}}/>,
+  <Settings style={{padding: 5}}/>,
+  <Help style={{padding: 5}}/>,
+  <NightsStay style={{padding: 5}}/>
 ];
 export const ProfileDropdown = (props) => {
   const { userId } = props;
   const menus = [
     {name: 'Thông tin cá nhân', link: `/profile/${userId}`},
     {name: 'Đơn hàng của tôi', link: `/cart/${userId}`},
-    {name: 'Cài đặt và Chính sách', link: '/settings'},
+    {name: 'Cài đặt chung', link: '/settings'},
     {name: 'Hỗ trợ và giúp đỡ', link: '/help'},
     {name: 'Chế độ hiển thị', link: '/access'},
   ];
@@ -47,7 +47,7 @@ export const ProfileDropdown = (props) => {
           })
         }
         <div className={styles.menusItemContainer}>
-          <ExitToApp/>
+          <ExitToApp style={{padding: 5}}/>
           <li className={styles.menusItem} onClick={Logout} >Đăng xuất</li>
         </div>
       </ul>

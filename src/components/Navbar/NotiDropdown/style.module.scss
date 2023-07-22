@@ -1,0 +1,23 @@
+.NotiContainer {
+  position: absolute;
+  height: 600px;
+  width: 500px;
+  top: 50px;
+  right: 0;
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 3px 3px 3px lightgray;
+  .titleContainer {
+    display: flex;
+    border-bottom: 1.5px solid lightgray;
+    justify-content: center;
+    height: 50px;
+    color: black;
+  }
+  .contentContainer {
+    height: 85%;
+    overflow-y: scroll;
+    padding: 10px;
+  }
+}
