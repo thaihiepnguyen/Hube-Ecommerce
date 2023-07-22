@@ -6,6 +6,7 @@ import AdminPage from '../pages/Admin';
 import ProfilePage from "../pages/ProfilePage";
 import ShoppingCartPage from "../pages/ShoppingCartPage";
 import Seller from '../pages/Seller';
+import Account from '../pages/Seller/Account';
 import ProductDetailPage from "../pages/ProductDetailPage";
 import SearchPage from '../pages/SearchPage';
 
@@ -88,6 +89,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
+        element: <Seller />,
+      },
+      {
+        path: 'dashboard',
+        element: <Seller />,
+      },
+      {
+        path: 'account',
+        element: <Seller />,
+      },
+      {
+        path: 'shop',
         element: <Seller />,
       }
     ],

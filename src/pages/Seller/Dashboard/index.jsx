@@ -24,7 +24,7 @@ ChartJS.register(
   Legend,
 );
 
-const AdminDashboard = () => {
+const Dashboard = () => {
   const topSellData = [
     {
       id: 1,
@@ -213,4 +213,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default Dashboard;

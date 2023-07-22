@@ -10,6 +10,7 @@ import {
   LocalShipping,
   ExitToApp,
   LocalOffer,
+  House,
 } from '@material-ui/icons';
 
 const menuItems = [
@@ -17,6 +18,16 @@ const menuItems = [
     title: 'Dashboard',
     icon: Dashboard,
     link: '/seller/dashboard',
+  },
+  {
+    title: 'Account',
+    icon: PeopleAlt,
+    link: '/seller/account',
+  },
+  {
+    title: 'Your shop',
+    icon: House,
+    link: '/seller/shop',
   },
   {
     title: 'Products',

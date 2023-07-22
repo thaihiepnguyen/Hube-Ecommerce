@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    border: 1px solid;
+    margin: 1rem;
+
+    div {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+}
