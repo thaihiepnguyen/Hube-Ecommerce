@@ -9,7 +9,7 @@ const ProductList = props => {
   const { label, data } = props;
 
   return (
-    <div className={styles.productsContainer}>
+    <>
       <h2>{label}</h2>
       <Carousel
         itemClass={styles.carouselItem}
@@ -49,7 +49,7 @@ const ProductList = props => {
           </div>
         ))}
       </Carousel>
-    </div>
+    </>
   );
 };
 

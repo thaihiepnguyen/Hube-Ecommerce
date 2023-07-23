@@ -1,38 +1,62 @@
 @import './../../scss/variables.scss';
 
 .cardContainer {
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: white;
-
+  box-shadow:
+  rgba(0, 0, 0, 0.2) 0px 2px 1px 1px,
+  rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+  rgba(0, 0, 0, 0.12) 0px 1px 3px 1px;
   .image {
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 6px 6px 0 0;
   }
 
-  .cardDetail {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 15px;
-    gap: 5px;
+  .imageContainer {
+    position: relative;
+    .favorite {
+      color: rgb(220, 73, 108);
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      .favoriteIcon {
+        border-radius: 50%;
+        padding: 7px;
+        background-color: #f1f1f1dd;
+      }
+      &:hover {
+        scale: 1.05;
+        transition: all 0.2s linear;
+      }
+    }
 
     .categories {
       display: flex;
       gap: 10px;
       margin-bottom: 10px;
+      position: absolute;
+      bottom: 2px;
+      left: 10px;
 
       .category {
         border-radius: 20px;
-        background-color: #f1f1f1;
+        background-color: #f1f1f199;
         padding: 5px 10px;
         font-size: 12px;
         width: fit-content;
       }
     }
+  }
+
+  .cardDetail {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 5px;
 
     .name {
-      font-size: 20px;
-      font-weight: 500;
-      padding: 5px 0;
+      font-size: 18px;
+      font-weight: bold;
     }
 
     .shop {
@@ -44,42 +68,42 @@
 
     .priceContainer {
       display: flex;
-      flex-direction: column;
-      min-height: 50px;
+      //min-height: 50px;
       gap: 5px;
     }
-
-    .discount {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .cost {
-        font-size: 12px;
-        text-decoration: line-through;
-        color: gray;
-      }
-
-      .percent {
-        background-color: rgb(51, 183, 161);
-        padding: 3px 10px;
-        font-size: 10px;
-        color: white;
-        border-radius: 10px;
-      }
+    .percent {
+      background-color: rgb(245, 245, 250);
+      padding: 3px 10px;
+      text-align: center;
+      color: rgb(39, 39, 42);
+      border-radius: 10px;
     }
 
+    //.discount {
+    //  display: flex;
+    //  align-items: center;
+    //  gap: 10px;
+    //
+    //  .cost {
+    //    font-size: 12px;
+    //    text-decoration: line-through;
+    //    color: gray;
+    //  }
+
+
+    //}
+
     .price {
-      font-size: 18px;
-      font-weight: 500;
-      color: red;
-      letter-spacing: 2px;
+      font-size: 20px;
+      font-weight: bold;
+      color: rgb(255, 66, 78);
+      //letter-spacing: 2px;
     }
 
     .starIcon {
       color: #ffce3d;
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
     }
 
     .rate {
@@ -88,6 +112,7 @@
       gap: 20px;
       padding: 5px 0;
       font-size: 12px;
+      justify-content: space-between;
     }
 
     .buttonGroup {
@@ -96,25 +121,15 @@
       align-items: center;
 
       .button {
+        width: 100%;
         margin: 0;
         background-color: $border_button;
         color: white;
+        font-weight: bold;
 
         &:hover {
-          scale: 1.05;
-        }
-      }
-
-      .favorite {
-        color: red;
-
-        .favoriteIcon {
-          border-radius: 5px;
-          padding: 7px;
-          background-color: #f1f1f1;
-        }
-        &:hover {
-          scale: 1.05;
+          scale: 1.01;
+          transition: all 0.2s linear;
         }
       }
     }
@@ -122,5 +137,6 @@
 
   &:hover {
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 2px 4px 1px, rgba(0, 0, 0, 0.12) 0px 1px 7px 1px;
   }
 }

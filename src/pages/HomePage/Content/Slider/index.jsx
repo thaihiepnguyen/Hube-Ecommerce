@@ -20,6 +20,8 @@ const Slider = () => {
       customLeftArrow={<CustomLeftArrow />}
       customRightArrow={<CustomRightArrow />}
       customDot={<CustomDot />}
+      className={styles.styledCarousel}
+      autoPlay={true}
       responsive={{
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
