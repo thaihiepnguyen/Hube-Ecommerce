@@ -5,6 +5,9 @@ import Footer from '../../../components/Footer';
 import ProductList from '../../../components/ProductList';
 import { getCategories } from '../../../api/category';
 import CategoryCard from '../../../components/CategoryCard';
+import axios from "axios";
+import {BASE_URL} from "../../../App";
+
 const Content = () => {
   const [categories, setCategories] = useState([]);
 
@@ -151,6 +154,21 @@ const Content = () => {
       shopName: 'Tan Sang',
     },
   ];
+
+  const [products, setProducts] = useState([{}]);
+  useEffect(() => {
+    async function fetchData() {
+      const url = `${BASE_URL}/products`;
+      const response = await axios.get(url, {
+        withCredentials: true
+      });
+
+      setProducts(response.data);
+    }
+
+    fetchData();
+  }, [])
+
   return (
     <div className={styles.contentContainer}>
       <div className={styles.innerContent}>
@@ -165,7 +183,7 @@ const Content = () => {
           </div>
         </div>
 
-        <ProductList label='Gợi ý cho bạn' data={data} />
+        <ProductList label='Gợi ý cho bạn' data={products} />
 
         <ProductList label='Các sản phẩm phổ biến' data={data} />
 
