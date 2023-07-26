@@ -171,26 +171,26 @@ const Content = () => {
 
   return (
     <div className={styles.contentContainer}>
-      <div className={styles.innerContent}>
-        <Slider />
-        <div>
-          <h2>Danh Sách Các Thể Loại</h2>
-          <div className={styles.listCategoryCard}>
-            {categories2 &&
-              categories2.map((item, index) => (
-                <CategoryCard key={index} title={item.name} image={item.image} />
-              ))}
+        <div className={styles.innerContent}>
+          <Slider />
+          <div>
+            <h2>Danh Sách Các Thể Loại</h2>
+            <div className={styles.listCategoryCard}>
+              {categories2 &&
+                categories2.map((item, index) => (
+                  <CategoryCard key={index} title={item.name} image={item.image} />
+                ))}
+            </div>
           </div>
+
+          <ProductList label='Gợi ý cho bạn' data={products} />
+
+          <ProductList label='Các sản phẩm phổ biến' data={products} />
+
+          <ProductList label='Các sản phẩm bán chạy' data={products} />
+
+          <ProductList label='Lịch sử tìm kiếm' data={products} />
         </div>
-
-        <ProductList label='Gợi ý cho bạn' data={products} />
-
-        <ProductList label='Các sản phẩm phổ biến' data={data} />
-
-        <ProductList label='Các sản phẩm bán chạy' data={data} />
-
-        <ProductList label='Lịch sử tìm kiếm' data={data} />
-      </div>
       <Footer />
     </div>
   );
