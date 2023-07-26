@@ -7,6 +7,7 @@ import {
   Favorite,
 } from '@material-ui/icons';
 import Button from '../Button';
+import PriceConverter from "../PriceConverter";
 const ProductCard = props => {
   const {
     name,
@@ -46,7 +47,9 @@ const ProductCard = props => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
-        <img className={styles.image} src={'https://salt.tikicdn.com/cache/750x750/ts/product/a2/38/6c/ce008c63f4ac771550439da44f5f8ee8.png.webp'} alt={name}/>
+        <div className={styles.imageBox}>
+          <img className={styles.image} src={image} alt={name} />
+        </div>
         <div className={styles.favorite}>
           {isFavorite ? (
             <Favorite className={styles.favoriteIcon} />
@@ -61,9 +64,9 @@ const ProductCard = props => {
         )}
       </div>
       <div className={styles.cardDetail}>
-        <div className={styles.name}>Apple iPhone 14</div>
+        <div className={styles.name}>{name}</div>
         <div className={styles.priceContainer}>
-          <div className={styles.price}>26.000.000 đ</div>
+          <PriceConverter>{price}</PriceConverter>
           {discount && (
               <div className={styles.percent}>
                 <span>-{discount}%</span>

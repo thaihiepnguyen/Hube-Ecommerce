@@ -43,8 +43,8 @@ const ProductList = props => {
               discount={item.discount}
               address={item.address}
               isFavorite={item.isFavorite}
-              categories={item.categories}
-              shopName={item.shopName}
+              categories={item.categories || [{name: 'iPhone'}, {name: 'Apple'}]}
+              shopName={item.shopName || 'Gojo Shop'}
             />
           </div>
         ))}
