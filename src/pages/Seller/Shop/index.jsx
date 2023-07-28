@@ -11,7 +11,8 @@ const Shop = (props) => {
                 <div className={styles.left_section}>
                     <Box
                         name="Shop name"
-                        note="Please put the name in accordance with regulations"/>
+                        note="Please put the name in accordance with regulations"
+                        type="0"/>
                     <div className={styles.instruction}>
                         <div>
                             To avoid an unfortunate rejection of your application, please name your store according to the following regulations:
@@ -24,6 +25,13 @@ const Shop = (props) => {
                     <Box
                         name="Shop URL"
                         note="This is the automatically generated expected URL. Once the stall name is approved, the official URL will be updated here."
+                        type="0"
+                        />
+                    <Box
+                        name="Shop Logo"
+                        note="Dimensions: 320 x 320 px I JPEG, JPG I Up to 2MB
+                        (Can be updated after completing the profile, in the Booth Decoration section)."
+                        type="1"
                         />
                 </div>
                 <div className={styles.right_section}>
