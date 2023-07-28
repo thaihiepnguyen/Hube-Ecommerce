@@ -14,7 +14,7 @@ const Box = (props) => {
         reader.readAsDataURL(file);
         }
     };
-    
+
     return (
         <div className={styles.container}>
             <div className={styles.name}>{props.name}</div>
@@ -25,7 +25,7 @@ const Box = (props) => {
                     <div>
                         <input type="file" className="imageUpload" id="imageUpload" accept=".jpg, .jpeg, .png" onChange={handleImageUpload} />
                         <div id="imagePreview">
-                        {image && <img src={image} alt="Uploaded Image" width="300" />}
+                            {image && <img src={image} alt="Uploaded Image" width="100" />}
                         </div>
                     </div>  
                 )

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from './styles.module.scss';
 import Box from './Box';
 import ShopPhoto from '../../../../src/assets/shop.png';
+import Button from '../../../../src/components/Button';
 
 const Shop = (props) => {
     return (
