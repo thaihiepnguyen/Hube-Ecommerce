@@ -25,7 +25,9 @@ const Box = (props) => {
                     <div>
                         <input type="file" className="imageUpload" id="imageUpload" accept=".jpg, .jpeg, .png" onChange={handleImageUpload} />
                         <div id="imagePreview">
-                            {image && <img src={image} alt="Uploaded Image" width="100" />}
+                            <div style={{width: "100px", height: "100px", overflow: "hidden"}}>
+                                {image && <img src={image} alt="Uploaded Image" width="100%"/>}
+                            </div>
                         </div>
                     </div>  
                 )
