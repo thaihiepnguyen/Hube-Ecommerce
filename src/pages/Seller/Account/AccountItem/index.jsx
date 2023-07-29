@@ -4,8 +4,10 @@ import styles from './styles.module.scss';
 const AccountItem = (props) => {
     return (
         <div className={styles.container}>
-            <div className={styles.title}>{props.title}</div>
-            <div className={styles.content}>{props.content}</div>
+            <div className={styles.title}>
+                {props.title}
+            </div>
+            <input className={styles.content} readOnly={props.readOnly} value={props.content} ref={props.refs}></input>
         </div>
     )
 }

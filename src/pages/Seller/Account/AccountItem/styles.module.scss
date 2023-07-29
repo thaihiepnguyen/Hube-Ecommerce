@@ -1,12 +1,21 @@
 .container {
     display: flex;
-    justify-content: space-between;
-    padding: 1rem 4rem;
+    // justify-content: start;
+    // gap: 2rem;
+    padding: 2px 4rem;
     border: 1px solid;
     margin: 1rem;
+    align-items: center;
 
     div {
-        flex-grow: 1;
-        flex-basis: 0;
+        width: 20rem;
     }
+    input {
+        width: 100%;
+    }
+}
+
+.content {
+    border: none;
+    width: auto;
 }
