@@ -1,15 +1,24 @@
 .avatar {
+    position: relative;
     width: 150px; /* Để chỉnh kích thước avatar, bạn có thể điều chỉnh giá trị này */
     height: 150px;
     border-radius: 50%; /* Đây là thuộc tính quan trọng để bo tròn hình ảnh */
-    overflow: hidden; /* Ngăn hình ảnh vượt qua khung bo tròn */
+    // overflow: hidden; /* Ngăn hình ảnh vượt qua khung bo tròn */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Tùy chọn: Thêm shadow cho avatar */
 
     margin: auto;
   }
   
-  .avatar img {
+  .avatar img:first-child {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Đảm bảo hình ảnh không bị bóp méo */
+  }
+
+  .addIcon {
+    position:absolute;
+    width: 2.5rem;
+    bottom: 0;
+    left: 78%; 
+    // display: none;
   }

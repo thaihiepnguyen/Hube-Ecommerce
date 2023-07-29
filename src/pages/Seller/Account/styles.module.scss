@@ -7,3 +7,10 @@
     margin: 2rem 0rem;
     color: #41417c;
 }
+
+.editBtn {
+    background-color: #026afb;
+    &:hover{
+        // background-color: #3a86f1 !important;
+    } 
+}
