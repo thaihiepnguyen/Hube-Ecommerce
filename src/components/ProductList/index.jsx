@@ -4,9 +4,14 @@ import 'react-multi-carousel/lib/styles.css';
 import styles from './styles.module.scss';
 import ProductCard from '../ProductCard';
 import { CustomLeftArrow, CustomRightArrow } from '../Arrow';
+import {BASE_URL} from "../../App";
 
 const ProductList = props => {
   const { label, data } = props;
+
+  function onClickProduct(id) {
+    window.location.href = `product/${id}`;
+  }
 
   return (
     <>
@@ -34,7 +39,7 @@ const ProductList = props => {
           }}
         >
           {data.map(item => (
-            <div key={item.id}>
+            <div key={item._id} onClick={() => onClickProduct(item._id)}>
               <ProductCard
                 image={item.image}
                 name={item.name}

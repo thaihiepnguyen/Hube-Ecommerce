@@ -23,137 +23,137 @@ const Content = () => {
   // double categories
   const categories2 = categories.concat(categories);
 
-  const data = [
-    {
-      id: 1,
-      name: 'Iphone 11 pro',
-      price: 100000,
-      rate: 4,
-      image:
-        'https://down-vn.img.susercontent.com/file/sg-11134201-23020-c7smqpt41cnva1',
-      address: 'Hà Nội',
-      categories: [
-        {
-          id: 1,
-          name: 'Iphone',
-        },
-        {
-          id: 2,
-          name: 'Apple',
-        },
-      ],
-      discount: 10,
-      isFavorite: true,
-      shopName: 'Tan Sang',
-    },
-    {
-      id: 2,
-      name: 'Áo thun nam',
-      price: 100000,
-      rate: 4,
-      image:
-        'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
-      address: 'Hà Nội',
-      categories: [
-        {
-          id: 1,
-          name: 'Iphone',
-        },
-        {
-          id: 2,
-          name: 'Apple',
-        },
-      ],
-      discount: 10,
-      isFavorite: true,
-      shopName: 'Tan Sang',
-    },
-    {
-      id: 3,
-      name: 'Áo thun nam',
-      price: 100000,
-      rate: 4,
-      image:
-        'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
-      address: 'Hà Nội',
-      categories: [
-        {
-          id: 1,
-          name: 'Iphone',
-        },
-        {
-          id: 2,
-          name: 'Apple',
-        },
-      ],
-      discount: 10,
-      isFavorite: true,
-      shopName: 'Tan Sang',
-    },
-    {
-      id: 4,
-      name: 'Áo thun nam',
-      price: 100000,
-      rate: 4,
-      image:
-        'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
-      address: 'Hà Nội',
-      categories: [
-        {
-          id: 1,
-          name: 'Iphone',
-        },
-        {
-          id: 2,
-          name: 'Apple',
-        },
-      ],
-      isFavorite: false,
-      shopName: 'Tan Sang',
-    },
-    {
-      id: 5,
-      name: 'Áo thun nam',
-      price: 100000,
-      rate: 4,
-      image:
-        'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
-      address: 'Hà Nội',
-      categories: [
-        {
-          id: 1,
-          name: 'Iphone',
-        },
-        {
-          id: 2,
-          name: 'Apple',
-        },
-      ],
-      isFavorite: true,
-      shopName: 'Tan Sang',
-    },
-    {
-      id: 6,
-      name: 'Áo thun nam',
-      price: 100000,
-      rate: 4,
-      image:
-        'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
-      address: 'Hà Nội',
-      categories: [
-        {
-          id: 1,
-          name: 'Iphone',
-        },
-        {
-          id: 2,
-          name: 'Apple',
-        },
-      ],
-      isFavorite: true,
-      shopName: 'Tan Sang',
-    },
-  ];
+  // const data = [
+  //   {
+  //     id: 1,
+  //     name: 'Iphone 11 pro',
+  //     price: 100000,
+  //     rate: 4,
+  //     image:
+  //       'https://down-vn.img.susercontent.com/file/sg-11134201-23020-c7smqpt41cnva1',
+  //     address: 'Hà Nội',
+  //     categories: [
+  //       {
+  //         id: 1,
+  //         name: 'Iphone',
+  //       },
+  //       {
+  //         id: 2,
+  //         name: 'Apple',
+  //       },
+  //     ],
+  //     discount: 10,
+  //     isFavorite: true,
+  //     shopName: 'Tan Sang',
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Áo thun nam',
+  //     price: 100000,
+  //     rate: 4,
+  //     image:
+  //       'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
+  //     address: 'Hà Nội',
+  //     categories: [
+  //       {
+  //         id: 1,
+  //         name: 'Iphone',
+  //       },
+  //       {
+  //         id: 2,
+  //         name: 'Apple',
+  //       },
+  //     ],
+  //     discount: 10,
+  //     isFavorite: true,
+  //     shopName: 'Tan Sang',
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Áo thun nam',
+  //     price: 100000,
+  //     rate: 4,
+  //     image:
+  //       'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
+  //     address: 'Hà Nội',
+  //     categories: [
+  //       {
+  //         id: 1,
+  //         name: 'Iphone',
+  //       },
+  //       {
+  //         id: 2,
+  //         name: 'Apple',
+  //       },
+  //     ],
+  //     discount: 10,
+  //     isFavorite: true,
+  //     shopName: 'Tan Sang',
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Áo thun nam',
+  //     price: 100000,
+  //     rate: 4,
+  //     image:
+  //       'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
+  //     address: 'Hà Nội',
+  //     categories: [
+  //       {
+  //         id: 1,
+  //         name: 'Iphone',
+  //       },
+  //       {
+  //         id: 2,
+  //         name: 'Apple',
+  //       },
+  //     ],
+  //     isFavorite: false,
+  //     shopName: 'Tan Sang',
+  //   },
+  //   {
+  //     id: 5,
+  //     name: 'Áo thun nam',
+  //     price: 100000,
+  //     rate: 4,
+  //     image:
+  //       'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
+  //     address: 'Hà Nội',
+  //     categories: [
+  //       {
+  //         id: 1,
+  //         name: 'Iphone',
+  //       },
+  //       {
+  //         id: 2,
+  //         name: 'Apple',
+  //       },
+  //     ],
+  //     isFavorite: true,
+  //     shopName: 'Tan Sang',
+  //   },
+  //   {
+  //     id: 6,
+  //     name: 'Áo thun nam',
+  //     price: 100000,
+  //     rate: 4,
+  //     image:
+  //       'https://down-vn.img.susercontent.com/file/vn-50009109-758d08efd9d3881636f31ceaf4f87749',
+  //     address: 'Hà Nội',
+  //     categories: [
+  //       {
+  //         id: 1,
+  //         name: 'Iphone',
+  //       },
+  //       {
+  //         id: 2,
+  //         name: 'Apple',
+  //       },
+  //     ],
+  //     isFavorite: true,
+  //     shopName: 'Tan Sang',
+  //   },
+  // ];
 
   const [products, setProducts] = useState([{}]);
   useEffect(() => {
