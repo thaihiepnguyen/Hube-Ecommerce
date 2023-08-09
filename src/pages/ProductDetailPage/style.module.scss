@@ -6,25 +6,35 @@
   overflow-y: scroll;
   height: 100vh;
   .flexContainer {
-    margin: 20px 180px;
+    margin-top: 30px;
+    margin-left: 200px;
+    width: 45%;
     display: flex;
-    .rightContent {
+    .right {
       margin-right: 30px;
-      width: 100%;
-      height: 1300px;
+      height: 2000px;
       flex: 2;
       .imageContainer {
+        box-shadow:
+                rgba(0, 0, 0, 0.2) 0px 2px 1px 1px,
+                rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+                rgba(0, 0, 0, 0.12) 0px 1px 3px 1px;
+        padding: 30px;
+        border-radius: 30px;
         width: 100%;
         height: 600px;
         position: relative;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         .favorite {
           color: rgb(220, 73, 108);
           position: absolute;
-          top: 6px;
-          right: 6px;
+          top: 16px;
+          right: 16px;
           .favoriteIcon {
+            font-size: 40px;
             border-radius: 50%;
             padding: 7px;
             background-color: #f1f1f1dd;
@@ -34,41 +44,45 @@
             transition: all 0.2s linear;
           }
         }
-        .imageBox {
-          width: 100%;
-          display: flex;
-          position: relative;
-          align-content: center;
-          .image {
-            text-align: center;
-            width: 400px;
-            height: 400px;
-          }
-        }
-
-        .categories {
-          display: flex;
-          gap: 10px;
-          margin-bottom: 10px;
-          position: absolute;
-          bottom: 2px;
-          left: 10px;
-
-          .category {
-            border-radius: 20px;
-            background-color: #f1f1f199;
-            padding: 5px 10px;
-            font-size: 12px;
-            width: fit-content;
-          }
+        .image {
+          max-width: 500px;
+          max-height: 600px;
+          height: auto;
+          //height: 500px;
         }
       }
     }
+  }
+  .left {
+    box-shadow:
+            rgba(0, 0, 0, 0.2) 0px 2px 1px 1px,
+            rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+            rgba(0, 0, 0, 0.12) 0px 1px 3px 1px;
+    border-radius: 20px;
+    width: 400px;
+    height: 450px;
+    position: fixed;
+    top: 110px;
+    right: 200px;
     .leftContent {
-      margin-left: 30px;
-      width: 100%;
-      height: 600px;
-      flex: 1;
+      justify-content: space-between;
+      height: 85%;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      .productName {
+        padding: 0;
+        font-weight: bolder;
+        font-size: larger;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+      .addToCart {
+        border-radius: 10px;
+        border: none;
+        width: 100%;
+        height: 60px;
+      }
     }
   }
 }

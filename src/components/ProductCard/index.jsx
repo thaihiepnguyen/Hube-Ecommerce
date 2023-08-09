@@ -8,7 +8,10 @@ import {
 } from '@material-ui/icons';
 import Button from '../Button';
 import PriceConverter from "../PriceConverter";
+import {useNavigate} from "react-router-dom";
+
 const ProductCard = props => {
+  const navigate = useNavigate()
   const {
     name,
     imageUrl,
@@ -45,8 +48,12 @@ const ProductCard = props => {
     return result;
   };
 
+  const onClickProduct = () => {
+    navigate(imageUrl)
+  }
+
   return (
-    <a className={styles.cardContainer} href={imageUrl}>
+    <div className={styles.cardContainer} onClick={onClickProduct}>
       <div className={styles.imageContainer}>
         <div className={styles.imageBox}>
           <img className={styles.image} src={image} alt={name} />
@@ -86,7 +93,7 @@ const ProductCard = props => {
           <Button buttonClassName={styles.button}>Thêm vào giỏ hàng</Button>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
