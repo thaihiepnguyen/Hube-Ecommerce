@@ -11,6 +11,7 @@ import PriceConverter from "../PriceConverter";
 const ProductCard = props => {
   const {
     name,
+    imageUrl,
     image,
     price,
     rate,
@@ -45,7 +46,7 @@ const ProductCard = props => {
   };
 
   return (
-    <div className={styles.cardContainer}>
+    <a className={styles.cardContainer} href={imageUrl}>
       <div className={styles.imageContainer}>
         <div className={styles.imageBox}>
           <img className={styles.image} src={image} alt={name} />
@@ -85,7 +86,7 @@ const ProductCard = props => {
           <Button buttonClassName={styles.button}>Thêm vào giỏ hàng</Button>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

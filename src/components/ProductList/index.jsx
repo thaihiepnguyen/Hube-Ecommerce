@@ -34,8 +34,9 @@ const ProductList = props => {
           }}
         >
           {data.map(item => (
-            <div key={item.id}>
+            <div key={item._id}>
               <ProductCard
+                imageUrl={`/products/${item._id}`}
                 image={item.image}
                 name={item.name}
                 rate={item.rate}
