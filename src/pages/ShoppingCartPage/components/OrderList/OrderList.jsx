@@ -25,17 +25,21 @@ const menuItems = [
 ];
   
 
-const OrderList = () => {
-    console.log("Order List run HERE");
-    {menuItems.map((item, index) => (
-        <OrderItem
-           key={index}
-           shop_name={item.shop_name}
-           status={item.status}
-           product_img={item.product_img}
-           product_title={item.product_title}
-    />
-   ))}
+const OrderList = props => {
+    return <>
+      {
+        menuItems.map((item, index) => (
+          <OrderItem
+             key={index}
+             shop_name={item.shop_name}
+             status={item.status}
+             product_img={item.product_img}
+             product_title={item.product_title}
+             clickViewDetailBtn={props.clickViewDetailBtn}
+      />
+     )) 
+      }
+    </>
 }
 
 export default OrderList;

@@ -3,12 +3,12 @@ import styles from './styles.module.scss';
 import ProgressBar from '../../../../assets/progress_bar.svg'
 import ProgressBarText from '../../../../assets/progress_bar_text.svg'
 import Back from '../../../../assets/back.svg'
-const DetailOrder = () => {
+const DetailOrder = (props) => {
     return (
         <div className={styles.container}>
             <div className={styles.first_table}>
                 <div className={styles.title}>
-                    <img src={Back} alt="Logo" />
+                    <img className={styles.back_btn} src={Back} alt="Logo" onClick={props.clickViewDetailBtn}/>
                     <p>MÃ ĐƠN HÀNG: 230716AXWERFINANV</p>
                 </div>
                 <div className={styles.progress_container}>
