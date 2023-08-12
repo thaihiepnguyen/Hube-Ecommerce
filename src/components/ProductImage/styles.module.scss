@@ -1,0 +1,17 @@
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.image {
+  max-width: 80px;
+}
