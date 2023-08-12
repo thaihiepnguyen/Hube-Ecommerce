@@ -1,0 +1,44 @@
+// .buttonContainer {
+//     width: 100%;
+  
+//     .buttonStyle {
+//       padding: 7px 21px;
+//       line-height: 1.75;
+//       min-width: 100px;
+//       font-weight: 800;
+//       cursor: pointer;
+//       font-size: 0.9375rem;
+//       margin: 5px;
+//       background-color: #ffffff;
+//       border: 1px solid lightgray;
+//       border-radius: 4px;
+//       box-shadow: 0 2px 3px #00000029;
+//       transition: all 0.2s linear;
+//       opacity: 0.95;
+//       &:hover {
+//         background-color: whitesmoke;
+//         opacity: 1;
+//       }
+//     }
+//   }
+
+  .buttonStyle {
+    padding: 7px 21px;
+    line-height: 1.75;
+    min-width: 100px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    margin: 5px;
+    background-color: #ffffff;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #00000029;
+    transition: all 0.2s linear;
+    opacity: 0.95;
+    &:hover {
+      background-color: whitesmoke;
+      opacity: 1;
+    }
+  }
+  
