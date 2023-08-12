@@ -12,7 +12,6 @@
     display: flex;
     .right {
       margin-right: 30px;
-      height: 2000px;
       flex: 2;
       .imageContainer {
         box-shadow:
@@ -51,6 +50,11 @@
           //height: 500px;
         }
       }
+      .imagesContainer {
+        display: flex;
+        padding: 10px;
+        margin-bottom: 100px;
+      }
     }
   }
   .left {
@@ -60,9 +64,9 @@
             rgba(0, 0, 0, 0.12) 0px 1px 3px 1px;
     border-radius: 20px;
     width: 400px;
-    height: 450px;
+    //height: 450px;
     position: fixed;
-    top: 110px;
+    top: 190px;
     right: 200px;
     .leftContent {
       justify-content: space-between;

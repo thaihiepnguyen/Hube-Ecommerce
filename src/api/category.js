@@ -7,6 +7,6 @@ export const getCategories = () => {
 };
 
 export const getProduct = (id) => {
-  const url = `${BASE_URL}/products/${id}`;
+  const url = `${BASE_URL}/products/byProId/${id}`;
   return axios.get(url);
 }

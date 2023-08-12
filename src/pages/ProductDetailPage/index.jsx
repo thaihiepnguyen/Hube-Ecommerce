@@ -3,9 +3,19 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import {getProduct} from "../../api/category";
 import React, {useEffect, useState} from "react";
-import { useParams } from 'react-router-dom';
-import {Favorite, FavoriteBorder, ShoppingCart, Star, StarOutline} from "@material-ui/icons";
+import {Link, useParams} from 'react-router-dom';
+import parse from 'html-react-parser'
+import {
+  Favorite,
+  ShoppingCart,
+  Star,
+  StarOutline
+} from "@material-ui/icons";
 import PriceDetailConverter from "../../components/PriceDetailConverter";
+import {Breadcrumbs} from "@material-ui/core";
+import {Typography} from "antd";
+import Quantity from "../../components/Quantity";
+import ProductImageContainer from "./ProductImageContainer";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -35,11 +45,26 @@ const ProductDetailPage = () => {
         <div className={styles.contentContainer}>
           <div className={styles.flexContainer}>
             <div className={styles.right}>
-              <div className={styles.imageContainer}>
-                <img className={styles.image} src={product.image} alt={product.name}/>
-                <div className={styles.favorite}>
-                  <Favorite className={styles.favoriteIcon} />
-                </div>
+              <div style={{height: 80}}>
+                <Breadcrumbs separator="›" aria-label="breadcrumb" >
+                  <Link underline="hover" color="inherit" href="/" to={'/'}>
+                    Trang chủ
+                  </Link>
+                  <Link
+                    underline="hover"
+                    color="inherit"
+                    href="/"
+                  >
+                    Sản phẩm
+                  </Link>
+                  <Typography color="text.primary">{product.name}</Typography>
+                </Breadcrumbs>
+              </div>
+              { Object.keys(product).length !== 0 && <ProductImageContainer product={product}/> }
+              <div>
+                {
+                 product?.description && parse(product.description)
+                }
               </div>
             </div>
           </div>
@@ -51,6 +76,7 @@ const ProductDetailPage = () => {
                 <p className={styles.productName}>{product.name}</p>
                 <p>Giá</p>
                 <PriceDetailConverter>{product.price}</PriceDetailConverter>
+                <Quantity/>
               </div>
               <button className={styles.addToCart}>
                 <div style={{display: "flex", justifyContent: "center"}}>
