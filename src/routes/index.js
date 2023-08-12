@@ -6,6 +6,7 @@ import AdminPage from '../pages/Admin';
 import ProfilePage from "../pages/ProfilePage";
 import ShoppingCartPage from "../pages/ShoppingCartPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
+import SearchPage from '../pages/SearchPage';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: 'products/:id',
     element: <ProductDetailPage/>
+  },
+  {
+    path: 'search',
+    element: <SearchPage/>
   },
   {
     path: '/admin',

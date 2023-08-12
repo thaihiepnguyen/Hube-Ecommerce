@@ -1,0 +1,30 @@
+.searchCity{
+  display: flex;
+  flex-direction: row;
+}
+.menuSearchPlace{
+  max-width: 1000px;
+  height: 600px;
+  overflow: auto;
+  background-color: #fff;
+  padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
+}
+.cbGroup{
+  flex-direction: row !important;
+  >label{
+    min-width: 175px;
+  }
+}
+#cityBox{
+  scroll-behavior: smooth;
+}
+.filterOption{
+  padding: 16px 0 0px 16px;
+}
+
+.divider{
+  background: #dfdfdf;
+  margin: 8px 0 8px 8px;
+}
