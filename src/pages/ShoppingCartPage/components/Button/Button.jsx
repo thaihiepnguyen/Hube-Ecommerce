@@ -16,6 +16,7 @@ const Button = props => {
   return (
     // <div className={cx(buttonContainer, className)} onClick={onClick}>
       <button
+        onClick={onClick}
         type="submit"
         formAction="localhost:3001/sign-up"
         className={cx(buttonStyle, buttonClassName)}

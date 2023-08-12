@@ -1,14 +1,16 @@
 import React, {useState, useRef} from 'react';
 import styles from './styles.module.scss';
-// import ProductImg from '../../../../../src/assets/product_img.png'
+import Logo from '../../../../../src/assets/shop_logo.png'
 import Button from '../Button/Button';
 
 const OrderItem = props => {
-    console.log("Order Item HEREEEEE");
     return (
         <div className={styles.container}>
             <div className={styles.title_section}>
-                <p className={styles.shop_name}>{props.shop_name}</p>
+                <div className={styles.name_section}>
+                    <div><img src={Logo} alt="Logo"/></div>
+                    <p className={styles.shop_name}>{props.shop_name}</p>
+                </div>
                 <p className={styles.status}>{props.status}</p>
             </div>
             <div className={styles.content_section}>
@@ -33,10 +35,11 @@ const OrderItem = props => {
                     <Button
                         backgroundColor="#DADADA"
                         buttonClassName={styles.btn}
-                        textColor="#B414FF">
+                        textColor="#B414FF"
+                        onClick={props.clickViewDetailBtn}>
                         Xem chi tiết
                     </Button>
-
+                    
                     <Button
                         backgroundColor="#B414FF"
                         textColor="#fff"
