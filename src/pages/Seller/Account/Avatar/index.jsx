@@ -7,8 +7,8 @@ const Avatar = (props) => {
         <div className={styles.avatar}>
             <img src={props.imgURI} alt="Avatar" />
             {
-            props.edit === false ? 
-                <img className={styles.addIcon} src={AddIcon} alt="addBtn" /> : ''
+                props.edit === false ? 
+                    <img className={styles.addIcon} src={AddIcon} alt="addBtn" /> : ''
             }
         </div>
     )
