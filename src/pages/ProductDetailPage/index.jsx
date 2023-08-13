@@ -72,7 +72,7 @@ const ProductDetailPage = () => {
                     color="inherit"
                     href="/"
                   >
-                    Sản phẩm
+                    {product?.category?.name}
                   </Link>
                   <Typography color="text.primary">{product.name}</Typography>
                 </Breadcrumbs>
