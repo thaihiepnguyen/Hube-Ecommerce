@@ -16,12 +16,18 @@
   >label{
     min-width: 175px;
   }
+  svg{
+    color: #A100AC;
+  }
 }
 #cityBox{
   scroll-behavior: smooth;
 }
 .filterOption{
   padding: 16px 0 0px 16px;
+  svg{
+    color: #A100AC;
+  }
 }
 
 .divider{

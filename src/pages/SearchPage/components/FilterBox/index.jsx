@@ -10,15 +10,10 @@ import { Divider } from 'antd';
 import { Stack } from 'immutable';
 const brands = [
   'Samsung',
-  'Nokia',
+  'Apple',
   'Xiaomi',
   'OPPO',
   'Vivo',
-  'Masstel',
-  'Vsmart',
-  'S-Mobile',
-  'TECNO',
-  'LG',
 ];
 const cities = {
   "A": ["An Giang"],

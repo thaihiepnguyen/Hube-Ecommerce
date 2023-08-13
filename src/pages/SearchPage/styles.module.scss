@@ -15,3 +15,15 @@
   margin-left: 24px;
   padding: 24px;
 }
+.rightContent{
+  margin-left: 24px;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.pagination{
+  ul{
+    justify-content: center;
+  }
+}

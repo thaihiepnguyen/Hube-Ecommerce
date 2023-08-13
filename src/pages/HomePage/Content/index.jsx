@@ -22,7 +22,7 @@ const Content = () => {
 
   // double categories
   const categories2 = categories.concat(categories);
-
+  console.log(categories2)
   const data = [
     {
       id: 1,
