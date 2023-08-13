@@ -8,11 +8,10 @@
   .flexContainer {
     margin-top: 30px;
     margin-left: 200px;
-    width: 45%;
     display: flex;
     .right {
       margin-right: 30px;
-      flex: 2;
+      width: 800px;
       .imageContainer {
         box-shadow:
                 rgba(0, 0, 0, 0.2) 0px 2px 1px 1px,
@@ -67,7 +66,7 @@
     //height: 450px;
     position: fixed;
     top: 190px;
-    right: 200px;
+    right: 170px;
     .leftContent {
       justify-content: space-between;
       height: 85%;
