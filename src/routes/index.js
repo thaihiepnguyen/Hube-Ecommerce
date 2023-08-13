@@ -3,11 +3,13 @@ import HomePage from '../pages/HomePage';
 import SignUpPage from '../pages/SignUp';
 import LoginPage from '../pages/Login';
 import AdminPage from '../pages/Admin';
-import ProfilePage from "../pages/ProfilePage";
-import ShoppingCartPage from "../pages/ShoppingCartPage";
+import ProfilePage from '../pages/ProfilePage';
+import ShoppingCartPage from '../pages/ShoppingCartPage';
 import Seller from '../pages/Seller';
-import ProductDetailPage from "../pages/ProductDetailPage";
+import ProductDetailPage from '../pages/ProductDetailPage';
 import SearchPage from '../pages/SearchPage';
+import CartPage from '../pages/CartPage';
+import CheckoutPage from '../pages/CheckoutPage';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/cart/:userId',
-    element: <ShoppingCartPage/>
+    element: <ShoppingCartPage />,
   },
   {
     path: '/settings',
@@ -44,11 +46,19 @@ const router = createBrowserRouter([
   },
   {
     path: 'products/:id',
-    element: <ProductDetailPage/>
+    element: <ProductDetailPage />,
   },
   {
     path: 'search',
-    element: <SearchPage/>
+    element: <SearchPage />,
+  },
+  {
+    path: 'cart',
+    element: <CartPage />,
+  },
+  {
+    path: 'checkout',
+    element: <CheckoutPage />,
   },
   {
     path: '/admin',
@@ -80,7 +90,7 @@ const router = createBrowserRouter([
       {
         path: 'discounts',
         element: <AdminPage />,
-      }
+      },
     ],
   },
   {
@@ -101,7 +111,7 @@ const router = createBrowserRouter([
       {
         path: 'shop',
         element: <Seller />,
-      }
+      },
     ],
   },
 ]);

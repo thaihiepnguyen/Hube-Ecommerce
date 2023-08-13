@@ -5,8 +5,8 @@ import Footer from '../../../components/Footer';
 import ProductList from '../../../components/ProductList';
 import { getCategories } from '../../../api/category';
 import CategoryCard from '../../../components/CategoryCard';
-import axios from "axios";
-import {BASE_URL} from "../../../App";
+import axios from 'axios';
+import { BASE_URL } from '../../../App';
 
 const Content = () => {
   const [categories, setCategories] = useState([]);
@@ -160,37 +160,41 @@ const Content = () => {
     async function fetchData() {
       const url = `${BASE_URL}/products`;
       const response = await axios.get(url, {
-        withCredentials: true
+        withCredentials: true,
       });
 
       setProducts(response.data);
     }
 
     fetchData();
-  }, [])
+  }, []);
 
   return (
     <div className={styles.contentContainer}>
-        <div className={styles.innerContent}>
-          <Slider />
-          <div>
-            <h2>Danh Sách Các Thể Loại</h2>
-            <div className={styles.listCategoryCard}>
-              {categories2 &&
-                categories2.map((item, index) => (
-                  <CategoryCard key={index} title={item.name} image={item.image} />
-                ))}
-            </div>
+      <div className={styles.innerContent}>
+        <Slider />
+        <div>
+          <h2>Danh Sách Các Thể Loại</h2>
+          <div className={styles.listCategoryCard}>
+            {categories2 &&
+              categories2.map((item, index) => (
+                <CategoryCard
+                  key={index}
+                  title={item.name}
+                  image={item.image}
+                />
+              ))}
           </div>
-
-          <ProductList label='Gợi ý cho bạn' data={products} />
-
-          <ProductList label='Các sản phẩm phổ biến' data={products} />
-
-          <ProductList label='Các sản phẩm bán chạy' data={products} />
-
-          <ProductList label='Lịch sử tìm kiếm' data={products} />
         </div>
+
+        <ProductList label='Gợi ý cho bạn' data={products} />
+
+        <ProductList label='Các sản phẩm phổ biến' data={products} />
+
+        <ProductList label='Các sản phẩm bán chạy' data={products} />
+
+        <ProductList label='Lịch sử tìm kiếm' data={products} />
+      </div>
       <Footer />
     </div>
   );

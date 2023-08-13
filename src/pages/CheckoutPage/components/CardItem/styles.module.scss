@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  gap: 2rem;
+
+  .title {
+    min-width: 200px;
+  }
+
+  .imageContainer {
+    margin-left: auto;
+  }
+}
