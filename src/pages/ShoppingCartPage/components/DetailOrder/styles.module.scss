@@ -33,6 +33,11 @@
     img {
         margin-right: 25rem;
     }
+
+    p {
+        font-size: 18px;
+        font-weight: bold;
+    }
 }
 
 .second_table {
@@ -53,17 +58,25 @@
     }
 }
 
+.description {
+    color: #808089;
+}
+
 .box {
-    height: 212px;
+    height: 170px;
     border: 1px solid black;
     border-radius: 10px;
     padding: 0.5rem 1rem;
+
+    p:nth-child(1){
+        font-weight: bold;
+    }
 }
 
 .tiny_box {
     border: 1px solid black;
     border-radius: 10px;
-    padding: 0 0.5rem;
+    padding: 0 0.7rem;
     width: 25rem;
 }
 
@@ -74,4 +87,11 @@
 .yellow {
     font-weight: bold;
     color: orange;
+}
+
+.flex {
+    height: 30px;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
 }

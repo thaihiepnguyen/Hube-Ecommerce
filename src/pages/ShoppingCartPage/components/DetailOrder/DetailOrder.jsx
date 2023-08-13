@@ -34,13 +34,15 @@ const DetailOrder = (props) => {
                         <div className={styles.right_section}>
                             <p className={styles.bold}>PHƯƠNG THỨC THANH TOÁN</p>
                             <div className={styles.tiny_box}>
-                                <p>Thanh toán khi nhận hàng</p>
+                                <p className={styles.bold}>Thanh toán khi nhận hàng</p>
                             </div>
 
                             <p className={styles.bold}>HÌNH THỨC GIAO HÀNG</p>
                             <div className={styles.tiny_box}>
-                                <p className={styles.yellow}>FAST</p>
-                                <p>Thanh toán khi nhận hàng</p>
+                                <div className={styles.flex}>
+                                    <p className={styles.yellow}>FAST</p>
+                                    <p className={styles.bold}>Giao hàng tiết kiệm</p>
+                                </div>
                                 <p>Phí vận chuyển: $2</p>
                             </div>
                         </div>

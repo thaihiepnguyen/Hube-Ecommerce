@@ -59,11 +59,15 @@
     }
 
     .price_section {
-        width: 1.8rem;
+        // width: 1.8rem;
         font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        p {
+            width: 2rem;
+        }
     }
 }
 
