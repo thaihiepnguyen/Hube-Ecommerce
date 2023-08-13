@@ -1,0 +1,22 @@
+.box {
+  height: 80px;
+}
+
+.contentContainer {
+  overflow-y: scroll;
+  height: 100vh;
+  .flexContainer {
+    display: flex;
+    height: 1000px;
+    .left {
+      flex: 1;
+      .profileContainer {
+        display: flex;
+      }
+    }
+    .right {
+      flex: 4;
+      background-color: blue;
+    }
+  }
+}
