@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar";
 import Sidebar from "./Sidebar";
 import styles from './style.module.scss'
 import Content from "./Content";
+import Footer from "../../components/Footer";
 
 const HomePage = () => {
   const { homeContainer, contentContainer } = styles

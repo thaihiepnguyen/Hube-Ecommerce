@@ -1,7 +1,15 @@
 .contentContainer {
-  margin-left: 60px;
   overflow-y: scroll;
-  height: 85vh;
+  height: 92vh;
   flex: 4;
-  padding: 50px 30px 0px 30px;
+  .innerContent {
+    padding: 50px 30px 0px 30px;
+    //min-width: 1320px;
+  }
+  .listCategoryCard {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
