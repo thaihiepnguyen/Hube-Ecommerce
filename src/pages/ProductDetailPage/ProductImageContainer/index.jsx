@@ -7,14 +7,11 @@ import ProductImage from '../../../components/ProductImage';
 
 const ProductImageContainer = (props) => {
   const { product } = props
-  const [clickedImage, setClickedImage] = useState('');
-  useEffect(() => {
-    setClickedImage(product.images[0])
-  }, [])
+  const [clickedImageIndex, setClickedImageIndex] = useState(0)
   return (
     <>
       <div className={styles.imageContainer}>
-        <img className={styles.image} src={clickedImage} alt={product.name}/>
+        <img className={styles.image} src={product.images[clickedImageIndex]} alt={product.name}/>
         <div className={styles.favorite}>
           <Favorite className={styles.favoriteIcon} />
         </div>
@@ -22,9 +19,11 @@ const ProductImageContainer = (props) => {
       <div className={styles.imagesContainer}>
         {
           product.images.map((item, index) => {
-            return (
-              <ProductImage image={item} images={product.images} myKey={index} key={index} onClick={setClickedImage}/>
-            )
+            if (clickedImageIndex === index) {
+              return (<ProductImage active={true} image={item} myKey={index} key={index} onClick={setClickedImageIndex}/>)
+            } else {
+              return (<ProductImage active={false} image={item} myKey={index} key={index} onClick={setClickedImageIndex}/>)
+            }
           })
         }
       </div>

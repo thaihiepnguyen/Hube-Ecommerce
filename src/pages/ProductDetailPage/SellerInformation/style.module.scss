@@ -1,0 +1,28 @@
+.sellerContainer {
+  width: 100%;
+  min-height: 300px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  .sellerName {
+    font-weight: bold;
+    font-size: larger;
+    margin: 0;
+  }
+  .sellerInformation {
+    margin-top: 10px;
+    display: flex;
+    .sellerRating {
+      margin-left: 20px;
+    }
+  }
+  .sellerDescription {
+    height: 80px;
+    color: rgb(98, 98, 98);
+    border-bottom: 1px solid #ddd;
+  }
+  .bottom {
+    display: flex;
+    
+  }
+}

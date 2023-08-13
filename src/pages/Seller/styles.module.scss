@@ -1,0 +1,21 @@
+@import '../../scss/variables.scss';
+
+.container {
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  padding: 20px;
+  background-color: $sidebar_background;
+
+  .content {
+    margin-left: 290px;
+    padding: 30px 60px;
+    height: calc(100% - 60px);
+    border-radius: 20px;
+    background-color: $text_white;
+    overflow-y: auto;
+  }
+}
+
+.title {
+  font-size: 26px;
+}

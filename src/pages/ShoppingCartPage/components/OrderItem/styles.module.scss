@@ -1,0 +1,95 @@
+.container {
+    border: 1px black solid;
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    margin: 1rem 15rem;
+    // width: 60rem;
+}
+
+.title_section {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px black solid;
+    
+    p {
+        width: 9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .status {
+        font-weight: bold;
+        color: #B414FF;
+    }
+
+    .name_section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div img {
+            width: auto;
+            height: 2rem;
+        }
+    }
+}
+
+.product_section {
+    display: flex;
+    gap: 2rem;
+
+    .product_img {
+        width: 15rem;
+        height: auto;
+    }
+
+    .product_content {
+        width: 65rem;
+
+        p {
+            margin: 0.3rem;
+        }
+
+        .product_title {
+            margin: 1rem 0.3rem;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+
+    .price_section {
+        width: 2.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    
+    :nth-child(1){
+        width: 8rem;
+    }
+
+    :nth-child(2){
+        width: 2rem;
+    }
+}
+
+
+.footer_section {
+    border-top: 1px black solid;
+    
+    .button_section {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+
+        .btn {
+            width: 10rem;
+        }
+    }
+}

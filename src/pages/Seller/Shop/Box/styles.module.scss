@@ -1,0 +1,29 @@
+.container {
+   
+}
+
+
+.title {
+    font-size: 26px;
+    padding: 2rem 0;
+    color: #41417c;
+}
+
+.name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.note {
+    font-style: italic;
+    font-size: 15px;
+}
+
+input {
+    margin: 1rem 0;
+    padding: 10px;
+    width: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}

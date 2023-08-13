@@ -6,8 +6,6 @@ import WebFont from 'webfontloader'
 export const BASE_URL = process.env.REACT_APP_API_URL;
 
 
-
-
 const App = () => {
   useEffect(() => {
     WebFont.load({
