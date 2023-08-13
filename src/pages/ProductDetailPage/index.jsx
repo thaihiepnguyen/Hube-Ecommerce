@@ -78,9 +78,6 @@ const ProductDetailPage = () => {
                 </Breadcrumbs>
               </div>
               { Object.keys(product).length !== 0 && <ProductImageContainer product={product}/> }
-              <h2>
-                Mô tả sản phẩm
-              </h2>
               <div style={{marginTop: 50, marginBottom: 50}}>
                 {
                  product?.description && parse(product.description)
@@ -91,7 +88,7 @@ const ProductDetailPage = () => {
               </h2>
               <SellerInformation/>
               <div style={{height: 80}}></div>
-              <div style={{maxWidth: 780}}>
+              <div style={{width: 850}}>
                 <ProductList label='Những sản phẩm liên quan' data={products} />
               </div>
               <div style={{height: 80}}></div>
