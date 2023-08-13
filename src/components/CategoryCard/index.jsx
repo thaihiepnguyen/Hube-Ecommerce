@@ -6,11 +6,11 @@ const CategoryCard = props => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>{title}</div>
-      {/* <img
+      <img
         className={styles.image}
-        src={`https://down-vn.img.susercontent.com/file/sg-11134201-23020-c7smqpt41cnva1`}
+        src={image}
         alt={title}
-      /> */}
+      />
     </div>
   );
 };

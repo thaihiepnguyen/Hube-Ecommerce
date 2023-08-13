@@ -7,6 +7,14 @@ import { getCategories } from '../../../api/category';
 import CategoryCard from '../../../components/CategoryCard';
 import axios from 'axios';
 import { BASE_URL } from '../../../App';
+import cat1 from '../../../assets/cat1.jpeg';
+import cat2 from '../../../assets/cat2.jpeg';
+import cat3 from '../../../assets/cat3.jpeg';
+import cat4 from '../../../assets/cat4.jpeg';
+import cat5 from '../../../assets/cat5.jpeg';
+import cat6 from '../../../assets/cat6.jpeg';
+
+
 
 const Content = () => {
   const [categories, setCategories] = useState([]);
@@ -176,14 +184,30 @@ const Content = () => {
         <div>
           <h2>Danh Sách Các Thể Loại</h2>
           <div className={styles.listCategoryCard}>
-            {categories2 &&
-              categories2.map((item, index) => (
-                <CategoryCard
-                  key={index}
-                  title={item.name}
-                  image={item.image}
-                />
-              ))}
+            <CategoryCard
+              title={'Điện thoại'}
+              image={cat1}
+            />
+            <CategoryCard
+              title={'Thời trang'}
+              image={cat2}
+            />
+            <CategoryCard
+              title={'Du lịch'}
+              image={cat3}
+            />
+            <CategoryCard
+              title={'Nội thất'}
+              image={cat4}
+            />
+            <CategoryCard
+              title={'Thể thao'}
+              image={cat5}
+            />
+            <CategoryCard
+              title={'Làm đẹp'}
+              image={cat6}
+            />
           </div>
         </div>
 
