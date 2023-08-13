@@ -40,7 +40,7 @@
     gap: 2rem;
 
     .product_img {
-        width: 15rem;
+        width: 12rem;
         height: auto;
     }
 
@@ -59,7 +59,8 @@
     }
 
     .price_section {
-        width: 2.1rem;
+        width: 1.8rem;
+        font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -72,10 +73,13 @@
     
     :nth-child(1){
         width: 8rem;
+        font-weight: bold;
+        color: #8A2BE2;
     }
 
     :nth-child(2){
         width: 2rem;
+        font-weight: bold;
     }
 }
 
