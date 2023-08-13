@@ -1,14 +1,11 @@
 import styles from './styles.module.scss';
+import cx from 'classnames';
 
 const ProductImage = (props) => {
-	const { image, myKey, onClick, images } = props
-
-	const onClickImage = (myKey) => {
-		onClick(images[myKey])
-	}
+	const { image, myKey, onClick, active } = props
 	
 	return (
-		<div className={styles.imageContainer} onClick={() => onClickImage(myKey)}>
+		<div className={active? styles.imageContainerActive : styles.imageContainer} onClick={() => onClick(myKey)}>
 			<img className={styles.image} src={image} alt={image}/>
 		</div>
 	)
