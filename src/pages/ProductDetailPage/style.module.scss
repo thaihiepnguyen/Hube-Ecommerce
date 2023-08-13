@@ -6,9 +6,10 @@
   overflow-y: scroll;
   height: 100vh;
   .flexContainer {
+    width: 60%;
     margin-top: 30px;
-    margin-left: 200px;
     display: flex;
+    justify-content: flex-end;
     .right {
       margin-right: 30px;
       width: 800px;
@@ -62,11 +63,11 @@
             rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
             rgba(0, 0, 0, 0.12) 0px 1px 3px 1px;
     border-radius: 20px;
-    width: 400px;
+    width: 23.333%;
     //height: 450px;
     position: fixed;
     top: 190px;
-    right: 170px;
+    right: 10%;
     .leftContent {
       justify-content: space-between;
       height: 85%;
