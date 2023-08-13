@@ -1,0 +1,74 @@
+.box {
+  height: 80px;
+}
+
+.contentContainer {
+  overflow-y: scroll;
+  height: 100vh;
+  .flexContainer {
+    margin: 20px 180px;
+    display: flex;
+    .rightContent {
+      margin-right: 30px;
+      width: 100%;
+      height: 1300px;
+      flex: 2;
+      .imageContainer {
+        width: 100%;
+        height: 600px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        .favorite {
+          color: rgb(220, 73, 108);
+          position: absolute;
+          top: 6px;
+          right: 6px;
+          .favoriteIcon {
+            border-radius: 50%;
+            padding: 7px;
+            background-color: #f1f1f1dd;
+          }
+          &:hover {
+            scale: 1.05;
+            transition: all 0.2s linear;
+          }
+        }
+        .imageBox {
+          width: 100%;
+          display: flex;
+          position: relative;
+          align-content: center;
+          .image {
+            text-align: center;
+            width: 400px;
+            height: 400px;
+          }
+        }
+
+        .categories {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 10px;
+          position: absolute;
+          bottom: 2px;
+          left: 10px;
+
+          .category {
+            border-radius: 20px;
+            background-color: #f1f1f199;
+            padding: 5px 10px;
+            font-size: 12px;
+            width: fit-content;
+          }
+        }
+      }
+    }
+    .leftContent {
+      margin-left: 30px;
+      width: 100%;
+      height: 600px;
+      flex: 1;
+    }
+  }
+}

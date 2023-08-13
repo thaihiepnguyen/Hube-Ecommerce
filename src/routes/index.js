@@ -5,6 +5,7 @@ import LoginPage from '../pages/Login';
 import AdminPage from '../pages/Admin';
 import ProfilePage from "../pages/ProfilePage";
 import ShoppingCartPage from "../pages/ShoppingCartPage";
+import ProductDetailPage from "../pages/ProductDetailPage";
 import Seller from '../pages/Seller';
 import Account from '../pages/Seller/Account';
 
@@ -41,7 +42,10 @@ const router = createBrowserRouter([
     path: '/access',
     element: <HomePage />,
   },
-
+  {
+    path: 'products/:id',
+    element: <ProductDetailPage/>
+  },
   {
     path: '/admin',
     children: [
