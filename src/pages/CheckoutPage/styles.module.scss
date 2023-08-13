@@ -1,0 +1,116 @@
+.container {
+  height: 100%;
+  overflow-y: scroll;
+
+  .content {
+    display: flex;
+    gap: 2rem;
+    margin: 0 5%;
+    min-height: 800px;
+    margin-top: 5%;
+
+    .box {
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 10px 20px;
+      box-shadow: 1px 1px #e0e0e0;
+    }
+
+    .checkoutContainer {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .promoContainer {
+      width: 20%;
+      height: fit-content;
+      flex-direction: column;
+      display: flex;
+      gap: 1rem;
+
+      .text {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 5px 0;
+      }
+
+      .bold {
+        font-weight: 600;
+      }
+
+      .confirmButton {
+        height: 40px;
+        font-weight: 600;
+        background-color: #b414ff;
+        color: white;
+      }
+    }
+
+    .buyerHeader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      color: #808089;
+
+      .changeButton {
+        background-color: #b414ff;
+        color: white;
+        font-weight: 600;
+      }
+    }
+
+    .buyerDetails {
+      .buyerName {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+
+      .addressContainer {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .addressStatus {
+          padding: 5px 10px;
+          border-radius: 20px;
+          font-size: 12px;
+          background-color: #e9e1ff;
+        }
+      }
+    }
+
+    .listContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .listCard {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .noteContainer {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+
+      .input {
+        width: 300px;
+        height: 40px;
+      }
+
+      .total {
+        margin-left: auto;
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+  }
+}
