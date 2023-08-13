@@ -5,6 +5,7 @@ import LoginPage from '../pages/Login';
 import AdminPage from '../pages/Admin';
 import ProfilePage from "../pages/ProfilePage";
 import ShoppingCartPage from "../pages/ShoppingCartPage";
+import Seller from '../pages/Seller';
 import ProductDetailPage from "../pages/ProductDetailPage";
 import SearchPage from '../pages/SearchPage';
 
@@ -79,7 +80,16 @@ const router = createBrowserRouter([
       {
         path: 'discounts',
         element: <AdminPage />,
-      },
+      }
+    ],
+  },
+  {
+    path: '/seller',
+    children: [
+      {
+        path: '',
+        element: <Seller />,
+      }
     ],
   },
 ]);
