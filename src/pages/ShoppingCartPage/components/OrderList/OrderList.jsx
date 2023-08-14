@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './styles.module.scss';
 import ProductImg from '../../../../../src/assets/product_img.png'
 import OrderItem from '../OrderItem/OrderItem';
+import TabNav from '../../../../assets/tab_nav.svg'
+import {Search} from '@material-ui/icons';
 
 const menuItems = [
     {
@@ -27,6 +29,18 @@ const menuItems = [
 
 const OrderList = props => {
     return <>
+      <div className={styles.tab_nav_container}>
+        <img src={TabNav} alt="Logo" />
+      </div>
+      <div className={styles.search_section}>
+        <div className={styles.searchContainer}>
+            <input
+              className={styles.inputStyle}
+              placeholder={' Tìm kiếm đơn hàng...'}
+            />
+          <Search className={styles.searchStyle} />
+        </div>
+      </div>
       {
         menuItems.map((item, index) => (
           <OrderItem
