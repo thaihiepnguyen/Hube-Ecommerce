@@ -3,7 +3,6 @@ import HomePage from '../pages/HomePage';
 import SignUpPage from '../pages/SignUp';
 import LoginPage from '../pages/Login';
 import AdminPage from '../pages/Admin';
-import ShoppingCartPage from '../pages/ShoppingCartPage';
 import Seller from '../pages/Seller';
 import ProductDetailPage from '../pages/ProductDetailPage';
 import SearchPage from '../pages/SearchPage';
@@ -30,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/cart/:userId',
-    element: <ShoppingCartPage />,
+    element: <AccountPage />,
   },
   {
     path: '/settings',

@@ -8,17 +8,36 @@ import {useEffect, useState} from "react";
 import Cookies from "universal-cookie/es6";
 import {BASE_URL} from "../../App";
 import axios from "axios";
+import {AccountBox, Favorite, ShoppingCart, ViewAgenda} from "@material-ui/icons";
+import Account from "../Seller/Account";
+import ShoppingCartPage from "../ShoppingCartPage";
 
 const breadcrumbs = [
-  'Thông tin tài khoản',
-  'Quản lý đơn hàng',
-  'Sản phẩm yêu thích',
-  'Sản phẩm bạn đã xem',
+  {
+    name: 'Thông tin tài khoản',
+    icon: <AccountBox/>,
+    content: <p>Thông tin tài khoan</p>
+  },
+  {
+    name: 'Quản lý đơn hàng',
+    icon: <ShoppingCart/>,
+    content: <ShoppingCartPage/>
+  },
+  {
+    name: 'Sản phẩm yêu thích',
+    icon: <Favorite/>,
+    content: <p>san pham yeu thich</p>
+  },
+  {
+    name: 'Sản phẩm bạn đã xem',
+    icon: <ViewAgenda/>,
+    content: <p>san pham dã xem</p>
+  },
 ]
 
 
 const AccountPage = () => {
-  const [currentBreadcrumbs, setCurrentBreadcrumbs] = useState(breadcrumbs[0]);
+  const [currentBreadcrumbIndex, setCurrentBreadcrumbIndex] = useState(0);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -35,7 +54,11 @@ const AccountPage = () => {
       fetchUser()
     }
   }, []);
-  
+
+  function setCurrentPage(index) {
+    setCurrentBreadcrumbIndex(index)
+  }
+
   return (
       <>
         <Navbar/>
@@ -47,7 +70,7 @@ const AccountPage = () => {
                 <Link underline="hover" color="inherit" href="/" to={'/'}>
                   Trang chủ
                 </Link>
-                <Typography color="text.primary">{currentBreadcrumbs}</Typography>
+                <Typography color="text.primary">{breadcrumbs[currentBreadcrumbIndex].name}</Typography>
               </Breadcrumbs>
             </div>
             <div className={styles.flexContainer}>
@@ -62,12 +85,36 @@ const AccountPage = () => {
                     <p style={{margin: 0, fontSize: 'smaller'}}>Tài khoản của </p>
                     {user && <p style={{margin: 0, fontWeight: "bold"}}>{user.fullname}</p>}
                   </div>
-
+                </div>
+                <div className={styles.navbarContainer}>
+                  { breadcrumbs.map((item, index) => {
+                    if (index == currentBreadcrumbIndex) {
+                      return <>
+                        <div style={{borderRadius: 5, display: "flex", alignItems: "center", backgroundColor: 'rgb(235, 235, 240)', padding: 10}}
+                        onClick={() => setCurrentPage(index)}>
+                          {item.icon}
+                          <span style={{marginLeft: 10}}>{item.name}</span>
+                        </div>
+                      </>
+                    } else {
+                      return <>
+                        <div style={{borderRadius: 5, display: "flex", alignItems: "center", padding: 10}}
+                             onClick={() => setCurrentPage(index)}
+                        >
+                          {item.icon}
+                          <span style={{marginLeft: 10}}>{item.name}</span>
+                        </div>
+                      </>
+                    }
+                  })}
                 </div>
 
               </div>
               <div className={styles.right}>
-
+                <h3>{breadcrumbs[currentBreadcrumbIndex].name}</h3>
+                {
+                  breadcrumbs[currentBreadcrumbIndex].content
+                }
               </div>
             </div>
           </div>

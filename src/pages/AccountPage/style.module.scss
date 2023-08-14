@@ -7,16 +7,22 @@
   height: 100vh;
   .flexContainer {
     display: flex;
-    height: 1000px;
+    height: auto;
     .left {
       flex: 1;
       .profileContainer {
         display: flex;
       }
+      .navbarContainer {
+        display: flex;
+        flex-direction: column;
+        color: gray;
+        margin-right: 60px;
+        min-width: 300px;
+      }
     }
     .right {
       flex: 4;
-      background-color: blue;
     }
   }
 }

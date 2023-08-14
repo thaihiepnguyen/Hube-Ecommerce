@@ -113,7 +113,10 @@ const Navbar = () => {
                 color='secondary'
                 className={styles.shoppingCartStyle}
               >
-                <ShoppingCart />
+                <ShoppingCart onClick={() => {
+                  window.location.href = '/cart';
+                }
+                }/>
               </Badge>
               <Badge>
                 <Language className={styles.languageStyle} />

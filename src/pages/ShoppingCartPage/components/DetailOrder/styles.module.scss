@@ -1,12 +1,13 @@
 .container {
     width: 70%;
     // height: auto;
-    margin: 0 auto;
+    //margin: 0 auto;
 }
 
 .first_table {
     // border: 1px solid black;
-    padding: 1rem 2rem;
+    //padding: 1rem 2rem;
+    width: 60rem;
 
     .progress_container {
         padding: 1.5rem 8rem;
@@ -36,7 +37,8 @@
 }
 
 .second_table {
-    padding: 1rem 2rem;
+    //padding: 1rem 2rem;
+    width: 60rem;
     :only-child {
         padding: 0;
     }
