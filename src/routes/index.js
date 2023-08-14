@@ -8,6 +8,7 @@ import AccountPage from "../pages/AccountPage";
 import SearchPage from "../pages/SearchPage";
 import CartPage from "../pages/CartPage";
 import CheckoutPage from "../pages/CheckoutPage";
+import Seller from "../pages/Seller";
 
 const router = createBrowserRouter([
   {
