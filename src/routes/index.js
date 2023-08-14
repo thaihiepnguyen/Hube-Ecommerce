@@ -4,9 +4,10 @@ import SignUpPage from '../pages/SignUp';
 import LoginPage from '../pages/Login';
 import AdminPage from '../pages/Admin';
 import ProductDetailPage from '../pages/ProductDetailPage';
-import ProfilePage from "../pages/ProfilePage";
-import ShoppingCartPage from "../pages/ShoppingCartPage";
-import ProductDetailPage from "../pages/ProductDetailPage";
+import AccountPage from "../pages/AccountPage";
+import SearchPage from "../pages/SearchPage";
+import CartPage from "../pages/CartPage";
+import CheckoutPage from "../pages/CheckoutPage";
 
 const router = createBrowserRouter([
   {
