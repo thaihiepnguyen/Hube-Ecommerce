@@ -1,5 +1,5 @@
 import styles from './style.module.scss';
-import { Language, NotificationsNone, Search, ShoppingCart } from '@material-ui/icons';
+import { Language, NotificationsNone, Search, ShoppingCart, Menu } from '@material-ui/icons';
 import logo from '../../assets/hube_logo.png';
 import logotitle from '../../assets/hube_title.png';
 import defaultAvatar from '../../assets/avatar0.png';
@@ -70,21 +70,22 @@ const Navbar = () => {
     navigate('/search');
   }
   return (
-    <div className={styles.navbarContainer}>
+    <header className={styles.navbarContainer}>
       <div className={styles.wrapper}>
         <div className={styles.left}>
           <Link className={styles.logoContainer} to='/'>
-            <img className={styles.logoImage} src={logo} alt={'logo'} />
+           
             <img
               className={styles.logoTitle}
               src={logotitle}
               alt={'logo-title'}
-              height={80}
-              width={90}
             />
           </Link>
         </div>
         <div className={styles.center} onSubmit={handleSubmit}>
+        <Badge>
+                <Menu className={styles.menuStyle} />
+          </Badge>
           <form className={styles.searchContainer}>
             <input
               className={styles.inputStyle}
@@ -128,8 +129,8 @@ const Navbar = () => {
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center' }} className={styles.avatarContainer}
                       onClick={handleMouseClick}>
-                      <span style={{ fontWeight: 'bolder' }}>Xin chào, {user?.fullname}</span>
-                      <img src={defaultAvatar} width={55} height={55} alt="avt" />
+                      <img src={defaultAvatar} width={55} height={55} alt="avt" style={{marginLeft: 20}} />
+                      <span style={{ fontWeight: 'bolder', marginLeft: 10 }}>{user?.fullname}</span>
                     </div>
                     <div>
                       {isAvatarHovering && <ProfileDropdown userId={user?.userId} />}
@@ -155,7 +156,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 export default Navbar;
