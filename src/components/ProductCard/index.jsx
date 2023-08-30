@@ -41,7 +41,7 @@ const ProductCard = props => {
     for (let i = 0; i < category.length; i++) {
       result.push(
         <div className={styles.category} key={i}>
-          {category[i].name}
+          {category[i]}
         </div>,
       );
     }

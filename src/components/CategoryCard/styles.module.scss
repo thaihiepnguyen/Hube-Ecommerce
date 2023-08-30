@@ -1,7 +1,7 @@
 .container {
   //width: 125px;
   //height: 140px;
-  width: 240px;
+  max-width: 230px;
   position: relative;
   border-radius: 10px;
   padding-top: 10px;
@@ -10,7 +10,7 @@
   .image {
     object-fit: cover;
     height: 90%;
-    width: 100%;
+    width: 98%;
     border-radius: 10px;
   }
 

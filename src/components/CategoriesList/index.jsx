@@ -17,7 +17,7 @@ const CategoriesList = (props) => {
                 responsive={{
                     desktop: {
                         breakpoint: { max: 3000, min: 1024 },
-                        items: 5,
+                        items: 5.5,
                         slidesToSlide: 1,
                     },
                     tablet: {

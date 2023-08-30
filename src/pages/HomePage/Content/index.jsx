@@ -13,13 +13,24 @@ import CategoriesList from "../../../components/CategoriesList";
 
 const Content = () => {
   const [products, setProducts] = useState([{}]);
+  const [recommendProducts, setRecommendProducts] = useState([{}]);
+  const [productsHistory, setProductsHistory] = useState([{}]);
   const [categories, setCategories] = useState([{}]);
   useEffect(() => {
     async function fetchData() {
       const urlProducts = `${BASE_URL}/products`;
+      const urlRecommendProducts = `${BASE_URL}/products/orderByPrice`;
+      const urlProductHistory = `${BASE_URL}/products/history`;
       const urlCategories = `${BASE_URL}/categories`;
-      const [response1, response2] = await Promise.all([
+      const [response1, response2, response3, response4] =
+        await Promise.all([
           axios.get(urlProducts, {
+            withCredentials: true,
+          }),
+          axios.get(urlRecommendProducts, {
+            withCredentials: true,
+          }),
+          axios.get(urlProductHistory, {
             withCredentials: true,
           }),
           axios.get(urlCategories, {
@@ -27,7 +38,9 @@ const Content = () => {
           })]);
 
       setProducts(response1.data);
-      setCategories(response2.data);
+      setRecommendProducts(response2.data)
+      setProductsHistory(response3.data)
+      setCategories(response4.data);
     }
 
     fetchData();
@@ -66,13 +79,13 @@ const Content = () => {
         <Slider />
         <CategoriesList label='Danh mục thể loại' data={categoriesFake}></CategoriesList>
 
-        <ProductList label='Gợi ý cho bạn' data={products} />
+        <ProductList label='Gợi ý cho bạn' data={recommendProducts} />
 
         <ProductList label='Các sản phẩm phổ biến' data={products} />
 
         <ProductList label='Các sản phẩm bán chạy' data={products} />
 
-        <ProductList label='Lịch sử tìm kiếm' data={products} />
+        <ProductList label='Lịch sử tìm kiếm' data={productsHistory} />
       </div>
       <Footer />
     </div>

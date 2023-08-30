@@ -7,7 +7,6 @@ import { CustomLeftArrow, CustomRightArrow } from '../Arrow';
 
 const ProductList = props => {
   const { label, data } = props;
-
   return (
     <>
       <h2>{label}</h2>
@@ -44,8 +43,8 @@ const ProductList = props => {
                 discount={item.discount}
                 address={item.address}
                 isFavorite={item.isFavorite}
-                categories={item.categories || [{name: 'iPhone'}, {name: 'Apple'}]}
-                shopName={item.shopName || 'Gojo Shop'}
+                categories={item.tags}
+                shopName={item['shopInfo'] ? item['shopInfo'][0].shopName : 'Gojo Shop'}
               />
             </div>
           ))}
