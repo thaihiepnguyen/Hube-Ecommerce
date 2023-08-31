@@ -41,7 +41,7 @@ const ProductCard = props => {
     for (let i = 0; i < category.length; i++) {
       result.push(
         <div className={styles.category} key={i}>
-          {category[i].name}
+          {category[i]}
         </div>,
       );
     }
@@ -90,7 +90,7 @@ const ProductCard = props => {
           <div>{shopName}</div>
         </div>
         <div className={styles.buttonGroup}>
-          <Button buttonClassName={styles.button}>Thêm vào giỏ hàng</Button>
+          <Button buttonClassName={styles.button}>Xem chi tiết</Button>
         </div>
       </div>
     </div>

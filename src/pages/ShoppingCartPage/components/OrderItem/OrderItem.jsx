@@ -33,7 +33,7 @@ const OrderItem = props => {
                 </div>
                 <div className={styles.button_section}>
                     <Button
-                        backgroundColor="#DADADA"
+                        backgroundColor="#ffffff"
                         buttonClassName={styles.btn}
                         textColor="#B414FF"
                         onClick={props.clickViewDetailBtn}>
