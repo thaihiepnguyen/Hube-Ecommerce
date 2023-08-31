@@ -9,7 +9,7 @@ const DetailOrder = (props) => {
             <div className={styles.first_table}>
                 <div className={styles.title}>
                     <img className={styles.back_btn} src={Back} alt="Logo" onClick={props.clickViewDetailBtn}/>
-                    <p>MÃ ĐƠN HÀNG: 230716AXWERFINANV</p>
+                    <p className={styles.order_code}>MÃ ĐƠN HÀNG: 230716AXWERFINANV</p>
                 </div>
                 <div className={styles.progress_container}>
                     <div className={styles.status_progress}>

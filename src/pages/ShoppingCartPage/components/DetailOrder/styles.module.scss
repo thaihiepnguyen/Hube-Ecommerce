@@ -21,7 +21,7 @@
     }
 
     .back_btn{
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         width: 7rem;
         height: auto;
     }
@@ -36,7 +36,12 @@
     }
 
     p {
+        // color: yellow;
         font-size: 18px;
+        font-weight: bold;
+    }
+
+    .order_code{
         font-weight: bold;
     }
 }
