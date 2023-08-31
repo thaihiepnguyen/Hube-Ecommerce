@@ -1,5 +1,8 @@
 import styles from './style.module.scss';
-import { Language, NotificationsNone, Search, ShoppingCart, Menu } from '@material-ui/icons';
+import { Language, NotificationsNone, Search, ShoppingCart, Menu, Gamepad,
+  Laptop,
+  EvStation, LocalHospital, HomeWork, Bookmark, Build, Sports, Highlight, CardTravel
+} from '@material-ui/icons';
 import logo from '../../assets/hube_logo.png';
 import logotitle from '../../assets/hube_title.png';
 import defaultAvatar from '../../assets/avatar0.png';
@@ -14,8 +17,31 @@ import { BASE_URL } from "../../App";
 import OutsideClickHandler from "react-outside-click-handler/esm/OutsideClickHandler";
 import NotificationDropdown from "./NotiDropdown";
 
+
+const categoriesIcon = [
+  <Gamepad/>,
+  <Laptop/>,
+  <LocalHospital/>,
+  <EvStation/>,
+  <CardTravel/>,
+  <HomeWork/>,
+  <Bookmark/>,
+  <Build/>,
+  <Sports/>,
+  <Highlight/>,
+];
+
 const Navbar = () => {
   const navigate = useNavigate()
+  const [hover, setHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
   const [user, setUser] = useState(null);
   const [isAvatarHovering, setAvatarHovering] = useState(false);
   const [isNotificationClick, setNotificationClick] = useState(false);
@@ -50,6 +76,22 @@ const Navbar = () => {
     }
   }, []);
 
+
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const url = `${BASE_URL}/categories`;
+    axios.get(url, {
+      withCredentials: true
+      })
+      .then(function (response) {
+        setCategories(response.data)
+      }).catch((e) => {
+      console.error(e.message);
+    })
+  }, [])
+
   const handleMouseClick = () => {
     setAvatarHovering(!isAvatarHovering);
   }
@@ -82,10 +124,60 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div className={styles.center} onSubmit={handleSubmit}>
+        <div className={styles.megaMenu}>
         <Badge>
                 <Menu className={styles.menuStyle} />
           </Badge>
+          <div className={styles.catalogMenuDropdown}>
+            <div className={styles.categoryColumn}>
+              <h1>Danh mục sản phẩm</h1>
+              
+              <a href="#">Đồ chơi - Mẹ và Bé</a>
+              <a href="#">Điện thoại - Máy tính Bảng</a>
+              <a href="#">Điện gia dụng</a>
+              <a href="#">Thời trang</a>
+              <a href="#"   
+               onMouseEnter={handleMouseEnter}
+             onMouseLeave={handleMouseLeave}>Làm đẹp - sức khoẻ</a>
+              <a href="#">Nhà cửa Đời sống</a>
+              <a href="#">Nhà sách - Văn phòng phẩm</a>
+            </div>
+  
+            <div className={styles.productColumn}
+             style={{ visibility:  hover ? 'visible' : 'hidden' }}
+            
+            >
+              <div className={styles.productColumnTitle}>
+                <Gamepad/>
+                <span>Làm đẹp sức khoẻ</span>
+              </div>
+  `
+              <div className={styles.productColumnMenu}  
+             
+              >
+                <h3>LÀM ĐẸP - SỨC KHOẺ</h3>
+                <a href="#">Khẩu trang các loại</a>
+                <a href="#">Nước rửa tay - xà phòng</a>
+                <a href="#">Băng keo cá nhân</a>
+                <a href="#">Khăn giấy - giấy ướt</a>
+                <a href="#">Chăm sóc cá nhân khác</a>
+                <a href="#">Chăm sóc làm đẹp</a>
+                <a href="#" style={{ color: 'blue' }}>Xem tất cả</a>
+              </div>
+            </div>
+  
+  
+  
+  
+        
+         
+          </div>
+        </div>
+        <div className={styles.center} onSubmit={handleSubmit}>
+       
+       
+
+
           <form className={styles.searchContainer}>
             <input
               className={styles.inputStyle}
