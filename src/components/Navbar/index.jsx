@@ -7,6 +7,7 @@ import logo from '../../assets/hube_logo.png';
 import logotitle from '../../assets/hube_title.png';
 import defaultAvatar from '../../assets/avatar0.png';
 import Button from '../Button';
+import CategoryItem from '../CategoryItem';
 import { Badge } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from "universal-cookie/es6";
@@ -131,16 +132,16 @@ const Navbar = () => {
           <div className={styles.catalogMenuDropdown}>
             <div className={styles.categoryColumn}>
               <h1>Danh mục sản phẩm</h1>
-              
-              <a href="#">Đồ chơi - Mẹ và Bé</a>
-              <a href="#">Điện thoại - Máy tính Bảng</a>
-              <a href="#">Điện gia dụng</a>
-              <a href="#">Thời trang</a>
-              <a href="#"   
-               onMouseEnter={handleMouseEnter}
-             onMouseLeave={handleMouseLeave}>Làm đẹp - sức khoẻ</a>
-              <a href="#">Nhà cửa Đời sống</a>
-              <a href="#">Nhà sách - Văn phòng phẩm</a>
+              {
+        categories.map((item, index) => (
+          <a key={item._id} href="#" 
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}>
+           
+              {item.name}
+          </a>
+        ))
+      }
             </div>
   
             <div className={styles.productColumn}
