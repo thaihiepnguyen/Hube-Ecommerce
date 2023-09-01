@@ -1,7 +1,7 @@
 import styles from './style.module.scss';
 import { Language, NotificationsNone, Search, ShoppingCart, Menu, Gamepad,
   Laptop,
-  EvStation, LocalHospital, HomeWork, Bookmark, Build, Sports, Highlight, CardTravel
+  EvStation, LocalHospital, HomeWork, Bookmark, Build, Sports, Highlight, CardTravel, KeyboardArrowRight
 } from '@material-ui/icons';
 import logo from '../../assets/hube_logo.png';
 import logotitle from '../../assets/hube_title.png';
@@ -130,43 +130,39 @@ const Navbar = () => {
                 <Menu className={styles.menuStyle} />
           </Badge>
           <div className={styles.catalogMenuDropdown}>
-            <div className={styles.categoryColumn}>
               <h1>Danh mục sản phẩm</h1>
+              <div className={styles.categoryContent}>
+              <div className={styles.categoryColumn}>
               {
-        categories.map((item, index) => (
-          <a key={item._id} href="#" 
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
-           
+        categories.slice(0, 6).map((item, index) => (
+          <a key={item._id} href="#" >
               {item.name}
           </a>
         ))
-      }
-            </div>
-  
-            <div className={styles.productColumn}
-             style={{ visibility:  hover ? 'visible' : 'hidden' }}
-            
-            >
-              <div className={styles.productColumnTitle}>
-                <Gamepad/>
-                <span>Làm đẹp sức khoẻ</span>
+              }
               </div>
-  `
-              <div className={styles.productColumnMenu}  
-             
-              >
-                <h3>LÀM ĐẸP - SỨC KHOẺ</h3>
-                <a href="#">Khẩu trang các loại</a>
-                <a href="#">Nước rửa tay - xà phòng</a>
-                <a href="#">Băng keo cá nhân</a>
-                <a href="#">Khăn giấy - giấy ướt</a>
-                <a href="#">Chăm sóc cá nhân khác</a>
-                <a href="#">Chăm sóc làm đẹp</a>
-                <a href="#" style={{ color: 'blue' }}>Xem tất cả</a>
+              <div className={styles.categoryColumn}>
+              {
+        categories.slice(6, 12).map((item, index) =>  (
+          <a key={item._id} href="#" >
+              { item.name}
+          </a>
+          
+        ))
+              }
               </div>
-            </div>
+              <div className={styles.categoryColumn}>
+              {
+         categories.slice(12, 18).map((item, index) => (
+          <a key={item._id} href="#" >
+              {item.name}
+          </a>
+        ))
+              }
+              </div>
+              </div>
   
+           
   
   
   
