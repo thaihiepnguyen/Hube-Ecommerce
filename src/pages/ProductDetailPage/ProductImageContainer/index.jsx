@@ -1,19 +1,26 @@
 import styles from './style.module.scss'
 import React, {useEffect, useState} from "react";
 import {
-  Favorite,
+  Favorite, FavoriteBorder,
 } from "@material-ui/icons";
 import ProductImage from '../../../components/ProductImage';
 
 const ProductImageContainer = (props) => {
+  const [favorite, setFavorite] = useState(false);
   const { product } = props
   const [clickedImageIndex, setClickedImageIndex] = useState(0)
   return (
     <>
       <div className={styles.imageContainer}>
         <img className={styles.image} src={product.images[clickedImageIndex]} alt={product.name}/>
-        <div className={styles.favorite}>
-          <Favorite className={styles.favoriteIcon} />
+        <div className={styles.favorite} onClick={() => {
+          setFavorite(!favorite);
+        }}>
+          {favorite ? (
+            <Favorite className={styles.favoriteIcon} />
+          ) : (
+            <FavoriteBorder className={styles.favoriteIcon} />
+          )}
         </div>
       </div>
       <div className={styles.imagesContainer}>
