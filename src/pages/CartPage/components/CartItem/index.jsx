@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Checkbox, Image, InputNumber, Button } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 import style from './styles.module.scss';
 
 const CartItem = props => {
-  const { name, price, image, quantity } = props.item;
+  const { name, price, image } = props.item;
+  const [quantity, setQuantity] = useState(1);
+
+  function handleChange(value) {
+    setQuantity(value);
+  }
 
   return (
     <div className={style.container}>
@@ -14,17 +19,35 @@ const CartItem = props => {
         <div className={style.column}>
           <div className={style.item}>
             <h5 className={style.itemTitle}>{name}</h5>
-            <Image alt={name} width={100} height={100} src={image} />
+            <Image
+              className={style.image}
+              alt={name}
+              width={100}
+              height={100}
+              src={image}
+            />
           </div>
         </div>
         <div className={style.column}>
-          <span>{price}</span>
+          <span>{price} đ</span>
         </div>
         <div className={style.column}>
-          <InputNumber height={40} width={100} min={1} value={quantity} />
+          <InputNumber
+            style={{
+              minWidth: '120px',
+              minHeight: '40px',
+              fontSize: '18px',
+            }}
+            className={style.inputNumber}
+            height={60}
+            width={150}
+            min={1}
+            value={quantity}
+            onChange={handleChange}
+          />
         </div>
         <div className={style.column}>
-          <span>{price}</span>
+          <span>{price} đ</span>
         </div>
       </div>
       <Button

@@ -11,7 +11,17 @@
 
   .item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    margin-left: 2rem;
+
+    .image {
+      min-height: 100px;
+      min-width: 100px;
+      object-fit: cover;
+    }
   }
 
   .column {
@@ -19,5 +29,17 @@
     align-items: center;
     justify-content: center;
     width: 25%;
+    margin-left: 10px;
+  }
+
+  .inputNumber {
+    input {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      padding-top: 6px;
+      font-weight: 500;
+    }
   }
 }

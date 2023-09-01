@@ -1,59 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import CartItem from './components/CartItem';
 import style from './styles.module.scss';
 import { Checkbox } from 'antd';
+import axios from 'axios';
+import { BASE_URL } from '../../App';
 
 const CartPage = () => {
-  const list = [
-    {
-      id: 1,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
-      quantity: 1,
-      image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
-    },
-    {
-      id: 2,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
-      quantity: 1,
-      image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
-    },
-    {
-      id: 3,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
-      quantity: 1,
-      image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
-    },
-    {
-      id: 4,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
-      quantity: 1,
-      image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
-    },
-    {
-      id: 5,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
-      quantity: 1,
-      image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
-    },
-  ];
+  const [products, setProducts] = useState([{}]);
+  useEffect(() => {
+    async function fetchData() {
+      const urlProducts = `${BASE_URL}/products`;
+      const [response] = await Promise.all([
+        axios.get(urlProducts, {
+          withCredentials: true,
+        }),
+      ]);
+
+      setProducts(response.data);
+    }
+
+    fetchData();
+  }, []);
+
+  const totalPrice = products.reduce((total, item) => {
+    return Number(total) + Number(item.price);
+  }, 0);
+
+  function handleRenderPrice(value) {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
   return (
     <div className={style.cartContainer}>
       <Navbar />
       <div className={style.cartContent}>
         <h1>Giỏ hàng</h1>
-        <span>Có {list.length} sản phẩm trong giỏ hàng</span>
+        <span>Có {products.length} sản phẩm trong giỏ hàng</span>
 
         <div className={style.listContainer}>
           <div className={style.header}>
@@ -64,7 +48,7 @@ const CartPage = () => {
             <div className={style.column}>Thành tiền</div>
           </div>
           <div className={style.listItem}>
-            {list.map(item => (
+            {products.map(item => (
               <>
                 <CartItem key={item.id} item={item} />
               </>
@@ -72,9 +56,16 @@ const CartPage = () => {
           </div>
           <div className={style.line}></div>
           <div className={style.totalContainer}>
-            <h4>Tạm tính: 123.123.123 VNĐ</h4>
-            <h4>Gỉam giá: 0 VNĐ</h4>
-            <h3>Tổng: 123.123.123 VNĐ</h3>
+            <h5>{handleRenderPrice(totalPrice)} đ</h5>
+            <h5>Gỉam giá: 0 đ</h5>
+            <h2
+              style={{
+                fontWeight: '700',
+                color: 'rgb(255, 66, 78)',
+              }}
+            >
+              {handleRenderPrice(totalPrice)} đ
+            </h2>
           </div>
         </div>
       </div>
