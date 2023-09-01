@@ -19,6 +19,7 @@ const ProductCard = props => {
     price,
     rate,
     address,
+    sale,
     discount,
     isFavorite,
     categories,
@@ -83,7 +84,7 @@ const ProductCard = props => {
         </div>
         <div className={styles.rate}>
           <div>{handleRenderRate(rate)}</div>
-          <div style={{fontWeight: "bold", color: "dimgray"}}>{`Đã bán 500`}</div>
+          <div style={{fontWeight: "bold", color: "dimgray"}}>Đã bán {sale}</div>
         </div>
         <div className={styles.shop}>
           <div>{address}</div>

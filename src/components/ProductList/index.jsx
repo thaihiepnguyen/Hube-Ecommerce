@@ -42,6 +42,7 @@ const ProductList = props => {
                 price={item.price}
                 discount={item.discount}
                 address={item.address}
+                sale={item.sale}
                 isFavorite={item.isFavorite}
                 categories={item.tags}
                 shopName={item['shopInfo'] ? item['shopInfo'][0].shopName : 'Gojo Shop'}

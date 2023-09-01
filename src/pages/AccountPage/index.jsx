@@ -11,12 +11,13 @@ import axios from "axios";
 import {AccountBox, Favorite, ShoppingCart, ViewAgenda} from "@material-ui/icons";
 import Account from "../Seller/Account";
 import ShoppingCartPage from "../ShoppingCartPage";
+import ProfilePage from "./ProfilePage";
 
 const breadcrumbs = [
   {
     name: 'Thông tin tài khoản',
     icon: <AccountBox/>,
-    content: <p>Thông tin tài khoan</p>
+    content: <ProfilePage/>
   },
   {
     name: 'Quản lý đơn hàng',
@@ -88,24 +89,29 @@ const AccountPage = () => {
                 </div>
                 <div className={styles.navbarContainer}>
                   { breadcrumbs.map((item, index) => {
+                    let result = <></>
                     if (index == currentBreadcrumbIndex) {
-                      return <>
-                        <div style={{borderRadius: 5, display: "flex", alignItems: "center", backgroundColor: 'rgb(235, 235, 240)', padding: 10}}
-                        onClick={() => setCurrentPage(index)}>
+                      result = <div style={{
+                          borderRadius: 5,
+                          display: "flex",
+                          alignItems: "center",
+                          backgroundColor: 'rgb(235, 235, 240)',
+                          padding: 10}}
+                             onClick={() => setCurrentPage(index)}>
                           {item.icon}
                           <span style={{marginLeft: 10}}>{item.name}</span>
                         </div>
-                      </>
                     } else {
-                      return <>
-                        <div style={{borderRadius: 5, display: "flex", alignItems: "center", padding: 10}}
+                      result = <div style={{borderRadius: 5, display: "flex", alignItems: "center", padding: 10}}
                              onClick={() => setCurrentPage(index)}
                         >
                           {item.icon}
                           <span style={{marginLeft: 10}}>{item.name}</span>
                         </div>
-                      </>
                     }
+                    return <div className={styles.item}>
+                      {result}
+                    </div>
                   })}
                 </div>
 

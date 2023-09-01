@@ -10,8 +10,10 @@
     height: auto;
     .left {
       flex: 1;
+      min-height: 650px;
       .profileContainer {
         display: flex;
+        margin-bottom: 20px;
       }
       .navbarContainer {
         display: flex;
@@ -19,6 +21,13 @@
         color: gray;
         margin-right: 60px;
         min-width: 300px;
+        .item {
+          &:hover {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
       }
     }
     .right {
