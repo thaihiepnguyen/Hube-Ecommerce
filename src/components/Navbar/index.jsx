@@ -17,6 +17,7 @@ import { ProfileDropdown } from "./ProfileDropdown";
 import { BASE_URL } from "../../App";
 import OutsideClickHandler from "react-outside-click-handler/esm/OutsideClickHandler";
 import NotificationDropdown from "./NotiDropdown";
+import { useSelector, useDispatch } from 'react-redux'
 
 
 const categoriesIcon = [
@@ -33,6 +34,7 @@ const categoriesIcon = [
 ];
 
 const Navbar = () => {
+  const count = useSelector((state) => state.counter.value)
   const navigate = useNavigate()
   const [hover, setHover] = useState(false);
 
@@ -203,7 +205,7 @@ const Navbar = () => {
                 </OutsideClickHandler>
               </Badge>
               <Badge
-                badgeContent={2}
+                badgeContent={count}
                 color='secondary'
                 className={styles.shoppingCartStyle}
               >
