@@ -2,6 +2,7 @@ import styles from './style.module.scss'
 import Button from "../../../components/Button";
 import React from "react";
 import {Mail, Phone} from "@material-ui/icons";
+import {Password, Pin, SafetyCheck} from "@mui/icons-material";
 
 const ProfilePage = () => {
   return <>
@@ -54,7 +55,7 @@ const ProfilePage = () => {
       <div className={styles.right}>
         <span>Số điện thoại & email</span>
 
-        <div style={{margin: 10, display: "flex", justifyContent: "space-between", alignItems: "center", width: '100%'}}>
+        <div style={{margin: 15, display: "flex", justifyContent: "space-between", alignItems: "center", width: '100%'}}>
           <Phone style={{flex: 1}}/>
           <div style={{flex: 11, marginLeft: 10}}>
             <span>0977328391</span>
@@ -63,10 +64,31 @@ const ProfilePage = () => {
             <button>Cập nhật</button>
           </div>
         </div>
-        <div style={{margin: 10, display: "flex", justifyContent: "space-between", alignItems: "center", width: '100%'}}>
+        <div style={{margin: 15, display: "flex", justifyContent: "space-between", alignItems: "center", width: '100%'}}>
           <Mail style={{flex: 1}}/>
           <div style={{flex: 11, marginLeft: 10, whiteSpace: "nowrap"}}>
             <span>thaihiep232002@gmail.com</span>
+          </div>
+          <div style={{flex: 4}}>
+            <button>Cập nhật</button>
+          </div>
+        </div>
+        <div style={{height: 50}}></div>
+        <span>Bảo mật</span>
+
+        <div style={{margin: 15, display: "flex", justifyContent: "space-between", alignItems: "center", width: '100%'}}>
+          <Password style={{flex: 1}}/>
+          <div style={{flex: 11, marginLeft: 10}}>
+            <span>Đổi mật khẩu</span>
+          </div>
+          <div style={{flex: 4}}>
+            <button>Cập nhật</button>
+          </div>
+        </div>
+        <div style={{margin: 15, display: "flex", justifyContent: "space-between", alignItems: "center", width: '100%'}}>
+          <SafetyCheck style={{flex: 1}}/>
+          <div style={{flex: 11, marginLeft: 10, whiteSpace: "nowrap"}}>
+            <span>Thiết lập mã pin</span>
           </div>
           <div style={{flex: 4}}>
             <button>Cập nhật</button>

@@ -4,7 +4,8 @@ import Footer from "../../components/Footer";
 import {getProduct} from "../../api/category";
 import React, {useEffect, useState} from "react";
 import {Link, useParams} from 'react-router-dom';
-import parse from 'html-react-parser'
+import parse from 'html-react-parser';
+import { useSelector, useDispatch } from 'react-redux'
 import {
   ShoppingCart,
   Star,
@@ -18,9 +19,11 @@ import ProductImageContainer from "./ProductImageContainer";
 import SellerInformation from "./SellerInformation";
 import ProductList from "../../components/ProductList";
 import axios from "axios";
+import {decrement, increment} from "../../features/counter/counterSlice";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
+  const dispatch = useDispatch()
   const [product, setProduct] = useState({});
   const fetchProduct = async () => {
     const response = await getProduct(id);
@@ -141,7 +144,7 @@ const ProductDetailPage = () => {
                 <PriceDetailConverter>{product.price}</PriceDetailConverter>
                 <Quantity/>
               </div>
-              <button className={styles.addToCart}>
+              <button className={styles.addToCart} onClick={() => dispatch(increment())}>
                 <div style={{display: "flex", justifyContent: "center"}}>
                   <div style={{display: "flex", alignItems: "center"}}>
                     <ShoppingCart/>

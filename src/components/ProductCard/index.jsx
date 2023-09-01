@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './styles.module.scss';
 import {
   StarOutline,
@@ -11,6 +11,7 @@ import PriceConverter from "../PriceConverter";
 import {useNavigate} from "react-router-dom";
 
 const ProductCard = props => {
+  const [favorite, setFavorite] = useState(false);
   const navigate = useNavigate()
   const {
     name,
@@ -54,13 +55,15 @@ const ProductCard = props => {
   }
 
   return (
-    <div className={styles.cardContainer} onClick={onClickProduct}>
+    <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
         <div className={styles.imageBox}>
           <img className={styles.image} src={image} alt={name} />
         </div>
-        <div className={styles.favorite}>
-          {isFavorite ? (
+        <div className={styles.favorite} onClick={() => {
+          setFavorite(!favorite)
+        }}>
+          {favorite ? (
             <Favorite className={styles.favoriteIcon} />
           ) : (
             <FavoriteBorder className={styles.favoriteIcon} />
@@ -91,7 +94,7 @@ const ProductCard = props => {
           <div>{shopName}</div>
         </div>
         <div className={styles.buttonGroup}>
-          <Button buttonClassName={styles.button}>Xem chi tiết</Button>
+          <Button buttonClassName={styles.button} onClick={onClickProduct}>Xem chi tiết</Button>
         </div>
       </div>
     </div>

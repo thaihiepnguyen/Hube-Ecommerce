@@ -12,6 +12,7 @@ import {AccountBox, Favorite, ShoppingCart, ViewAgenda} from "@material-ui/icons
 import Account from "../Seller/Account";
 import ShoppingCartPage from "../ShoppingCartPage";
 import ProfilePage from "./ProfilePage";
+import FavoritePage from "./FavoritePage";
 
 const breadcrumbs = [
   {
@@ -27,12 +28,12 @@ const breadcrumbs = [
   {
     name: 'Sản phẩm yêu thích',
     icon: <Favorite/>,
-    content: <p>san pham yeu thich</p>
+    content: <FavoritePage/>
   },
   {
     name: 'Sản phẩm bạn đã xem',
     icon: <ViewAgenda/>,
-    content: <p>san pham dã xem</p>
+    content: <FavoritePage/>
   },
 ]
 
