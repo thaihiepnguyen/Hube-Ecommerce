@@ -10,7 +10,7 @@ const ProductImageContainer = (props) => {
   const { product } = props
   const [clickedImageIndex, setClickedImageIndex] = useState(0)
   return (
-    <>
+    <div className={styles.bodyContainer}>
       <div className={styles.imageContainer}>
         <img className={styles.image} src={product.images[clickedImageIndex]} alt={product.name}/>
         <div className={styles.favorite} onClick={() => {
@@ -34,7 +34,7 @@ const ProductImageContainer = (props) => {
           })
         }
       </div>
-    </>
+    </div>
   )
 }
 
