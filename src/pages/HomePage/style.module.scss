@@ -1,9 +1,29 @@
 .homeContainer {
   display: flex;
-  margin-top: 80px;
+  
+ 
+  .bodyContainer {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 80px);
+    margin-top: 80px;
+    overflow-y: scroll;
+    .contentContainer {
+      display: flex;
+      flex-direction: row;
+      max-width: 100vw;
+      .sidebarStyling {
+        max-width: 30%;
+      }
+
+      .contentStyling {
+        max-width: calc(70% - 100px);
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+      }
+    }
+  }
 }
 
-.contentContainer {
-  display: flex;
-  width: 100%;
-}
+
+

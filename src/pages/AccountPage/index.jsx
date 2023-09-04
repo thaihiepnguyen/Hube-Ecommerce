@@ -66,7 +66,7 @@ const AccountPage = () => {
         <Navbar/>
         <div className={styles.box}></div>
         <div className={styles.contentContainer}>
-          <div style={{marginLeft: 180, marginRight: 180, marginTop: 30}}>
+          <div style={{marginLeft: 50, marginRight: 50, marginTop: 30}}>
             <div style={{marginBottom: 20}}>
               <Breadcrumbs separator="›" aria-label="breadcrumb" >
                 <Link underline="hover" color="inherit" href="/" to={'/'}>
