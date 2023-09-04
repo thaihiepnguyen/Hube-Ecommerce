@@ -6,8 +6,9 @@ const Footer = () => {
       <div className={styles.contentContainer}>
         <div className={styles.left}>
           <h3 style={{fontWeight:'bold'}}>Liên hệ</h3>
-          <div style={{paddingBottom: 10}}>+ 123-400 123</div>
+          <div style={{paddingBottom: 10}}>Hotline: + 123-400 123</div>
           <div style={{paddingBottom: 10}}>Email: hubesupport@gmail.com</div>
+          <div style={{paddingBottom: 10}}>Địa chỉ: 277 Nguyễn Văn Cừ, Phường 11, Quận 1, TP.HCM</div>
         </div>
         <div className={styles.center}>
           <h3>Về chúng tôi</h3>

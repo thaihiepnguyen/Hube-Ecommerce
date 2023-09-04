@@ -21,7 +21,6 @@ const categoriesIcon = [
   <CardTravel/>,
   <HomeWork/>,
   <Bookmark/>,
-  <Build/>,
   <Sports/>,
   <Highlight/>,
 ];
