@@ -89,10 +89,10 @@ const ProductCard = props => {
           <div>{handleRenderRate(rate)}</div>
           <div style={{fontWeight: "bold", color: "dimgray"}}>Đã bán {sale}</div>
         </div>
-        <div className={styles.shop}>
-          <div>{address}</div>
-          <div>{shopName}</div>
-        </div>
+        {/*<div className={styles.shop}>*/}
+        {/*  <div>{address}</div>*/}
+        {/*  <div>{shopName}</div>*/}
+        {/*</div>*/}
         <div className={styles.buttonGroup}>
           <Button buttonClassName={styles.button} onClick={onClickProduct}>Xem chi tiết</Button>
         </div>
