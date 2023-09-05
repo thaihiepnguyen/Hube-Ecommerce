@@ -9,7 +9,6 @@ import Button from '../../components/Button';
 import { Box, Checkbox, Stack } from '@mui/material';
 import { CartHeader } from '../SearchPage/components';
 import { fCurrency } from '../../utils';
-import { Link } from 'react-router-dom';
 const label = { inputProps: { 'aria-label': 'Checkbox all cart' } };
 
 const CartPage = () => {
