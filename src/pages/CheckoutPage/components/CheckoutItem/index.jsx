@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './styles.module.scss';
 import { Image } from 'antd';
+import { fCurrency } from '../../../../utils';
 
 const CheckoutItem = props => {
   const { name, price, quantity, image } = props.item;
@@ -17,7 +18,7 @@ const CheckoutItem = props => {
         <h5 className={style.itemTitle}>{name}</h5>
         <div>Số lượng: {quantity}</div>
       </div>
-      <div className={style.price}>{price}</div>
+      <div className={style.price}>{fCurrency(price)}</div>
     </div>
   );
 };
