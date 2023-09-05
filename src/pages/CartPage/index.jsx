@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import CartItem from './components/CartItem';
 import style from './styles.module.scss';
 import ShopCartProduct from '../ShopCartProduct';
-
+import Button from '../../components/Button';
 import { Box, Checkbox, Stack } from '@mui/material';
 import { CartHeader } from '../SearchPage/components';
 import { fCurrency } from '../../utils';
@@ -75,14 +76,14 @@ const CartPage = () => {
     })
     setPrice(price)
   }
-
+  const navigate = useNavigate()
   return (
     <div className={style.cartContainer}>
       <Navbar />
       <div className={style.cartContent}>
         <h1>Giỏ hàng</h1>
         <span>Có {4} sản phẩm trong giỏ hàng</span>
-
+        <div style={{display: 'flex', flexDirection:'row', width: '100%'}}>
         <div className={style.listContainer}>
           <Stack direction='row' alignItems='center'>
             <Checkbox {...label} />
@@ -97,12 +98,17 @@ const CartPage = () => {
             ))}
           </div>
           <div className={style.line}></div>
-          <div className={style.totalContainer}>
-            <h4>Tạm tính: {fCurrency(price)}</h4>
-            <h4>Gỉam giá: 0 VNĐ</h4>
-            <h3>Tổng: {fCurrency(price)}</h3>
-          </div>
+         
         </div>
+        <div className={style.totalContainer}>
+            <h4>Tạm tính: {fCurrency(price)}</h4>
+            <h4>Giảm giá: 0 VNĐ</h4>
+            <h3>Tổng: {fCurrency(price)}</h3>
+            <div className={style.buttonGroup}>
+          <Button buttonClassName={style.button} onClick={() => navigate("/checkout")}  >Thanh toán</Button>
+        </div>
+          </div>
+          </div>
       </div>
 
       <Footer />
