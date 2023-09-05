@@ -5,13 +5,16 @@ import Content from "./Content";
 import Footer from "../../components/Footer";
 
 const HomePage = () => {
-  const { homeContainer, contentContainer } = styles
+  const { homeContainer, contentContainer, bodyContainer, sidebarStyling, contentStyling } = styles
   return (
     <div className={homeContainer}>
       <Navbar />
+      <div className={bodyContainer}>
       <div className={contentContainer}>
-        <Sidebar/>
-        <Content/>
+        <Sidebar className = {sidebarStyling} />
+        <Content className = {contentStyling} />
+      </div>
+      <Footer />
       </div>
     </div>
   )

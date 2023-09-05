@@ -1,4 +1,4 @@
-import { Add } from '@material-ui/icons'
+import { Add, Star, KeyboardArrowRight } from '@material-ui/icons'
 import Button from '../../../components/Button'
 import styles from './style.module.scss'
 
@@ -10,23 +10,34 @@ const SellerInformation = () => {
         <div className={styles.sellerInformation}>
           <img 
           width={100}
+          height={100}
           src="/static/media/avatar0.76df38dc900575ebe928.png" 
           alt="avt" />
           <div className={styles.sellerRating}>
-            <p>4.7 / 5 sao</p>
+            <div style={{display: 'flex', alignItems: 'center', fontWeight: 600, fontSize: '1.25rem'}}>4.7 / 5
+
+            <Star className={styles.starIcon} />
+            </div>
+
             <p>482.5k+ theo dõi</p>
+           
           </div>
         </div>
-        <h4 className={styles.sellerDescription}>Mô tả shop</h4>
-        <div className={styles.bottom}>
-          <Button borderColor={'#8A2BE2'} textColor={'#4B0082'}>
+        <div style={{display: 'flex',  width: '700px'}}>
+            <Button borderColor={'#8A2BE2'} textColor={'#4B0082'} style={{width: '200px'}}>
             <div style={{display: 'flex'}}>
               <Add/>
               <p style={{marginTop: 0, marginBottom: 0, marginLeft: 10}}>Theo dõi</p>
             </div>
           </Button>
-          <p style={{width: 150, color: '#4B0082'}}>{"Xem shop > "}</p>
-        </div>
+
+          <Button borderColor={'#8A2BE2'} textColor={'#4B0082'} style={{width: '200px'}}>
+            <div style={{display: 'flex'}}>
+              <p style={{marginTop: 0, marginBottom: 0, marginLeft: 10}}>Xem Shop</p>
+              <KeyboardArrowRight/>
+            </div>
+          </Button>
+          </div>
       </div>
     </>
   )

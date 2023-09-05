@@ -93,7 +93,7 @@ const Content = () => {
 
         <ProductList label='Lịch sử tìm kiếm' data={productsHistory} />
       </div>
-      <Footer />
+    
     </div>
   );
 };

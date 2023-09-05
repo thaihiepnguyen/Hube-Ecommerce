@@ -18,6 +18,7 @@ import Quantity from "../../components/Quantity";
 import ProductImageContainer from "./ProductImageContainer";
 import SellerInformation from "./SellerInformation";
 import ProductList from "../../components/ProductList";
+import Tabs from "../../components/Tabs"
 import axios from "axios";
 import {decrement, increment} from "../../features/counter/counterSlice";
 
@@ -58,13 +59,12 @@ const ProductDetailPage = () => {
     return result;
   };
   return (
-      <>
+      <div style={{display: 'flex', flexDirection: 'column', overflowY: 'scroll', maxHeight: '100vh'}}>
         <Navbar/>
-        <div className={styles.box}></div>
         <div className={styles.contentContainer}>
           <div className={styles.flexContainer}>
             <div className={styles.right}>
-              <div style={{height: 80}}>
+              <div style={{height: '10vh'}}>
                 <Breadcrumbs separator="›" aria-label="breadcrumb" >
                   <Link underline="hover" color="inherit" href="/" to={'/'}>
                     Trang chủ
@@ -80,6 +80,7 @@ const ProductDetailPage = () => {
                 </Breadcrumbs>
               </div>
               { Object.keys(product).length !== 0 && <ProductImageContainer product={product}/> }
+             
               <div style={{marginTop: 50, marginBottom: 50}}>
                 {
                  product?.description && parse(product.description)
@@ -90,10 +91,36 @@ const ProductDetailPage = () => {
               </h2>
               <SellerInformation/>
               <div style={{height: 80}}></div>
-              <div style={{width: 850}}>
+             
+             
+            </div>
+            <div className={styles.left}>
+            <div className={styles.leftContent}>
+              <div style={{height: '70%'}}>
+                <div>{handleRenderRate(product.rate)}</div>
+                <p>Tên sản phẩm</p>
+                <p className={styles.productName}>{product.name}</p>
+                <p>Giá</p>
+                <PriceDetailConverter>{product.price}</PriceDetailConverter>
+                <Quantity  />
+              </div>
+              <button className={styles.addToCart} onClick={() => dispatch(increment())}>
+                <div style={{display: "flex", justifyContent: "center"}}>
+                  <div style={{display: "flex", alignItems: "center"}}>
+                    <ShoppingCart/>
+                    <h3 style={{marginLeft: 10}}>Mua ngay</h3>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+          </div>
+          
+          <div style={{width: "100%"}}>
                 <ProductList label='Những sản phẩm liên quan' data={products} />
               </div>
-              <div style={{height: 80}}></div>
+          <div style={{width: '60%'}}>
+          <div style={{height: 80 }}></div>
               <h2>Đánh giá của khách hàng</h2>
               <div style={{display: 'flex', borderBottom: '1px solid #ddd'}}>
                 <img 
@@ -133,30 +160,10 @@ const ProductDetailPage = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className={styles.left}>
-            <div className={styles.leftContent}>
-              <div>
-                <div>{handleRenderRate(product.rate)}</div>
-                <p>Tên sản phẩm</p>
-                <p className={styles.productName}>{product.name}</p>
-                <p>Giá</p>
-                <PriceDetailConverter>{product.price}</PriceDetailConverter>
-                <Quantity/>
-              </div>
-              <button className={styles.addToCart} onClick={() => dispatch(increment())}>
-                <div style={{display: "flex", justifyContent: "center"}}>
-                  <div style={{display: "flex", alignItems: "center"}}>
-                    <ShoppingCart/>
-                    <h3 style={{marginLeft: 10}}>Mua ngay</h3>
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
-          <Footer/>
+          
         </div>
-      </>
+        <Footer/>
+      </div>
     )
 }
 

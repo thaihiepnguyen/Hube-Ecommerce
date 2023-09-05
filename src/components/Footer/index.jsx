@@ -33,9 +33,6 @@ const Footer = () => {
           <div style={{paddingBottom: 10}}>Tra cứu đơn hàng</div>
         </div>
       </div>
-      <div className={styles.signature}>
-        © 2023 Hube. All Rights Reserved
-      </div>
     </div>
   )
 }
