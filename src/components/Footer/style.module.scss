@@ -32,3 +32,11 @@
   background-color: whitesmoke;
   margin-top: 60px;
 }
+.socialMedia{
+  display: flex;
+  gap: 8px;
+  >svg {
+    cursor: pointer;
+    font-size: 24px;
+  }
+}
