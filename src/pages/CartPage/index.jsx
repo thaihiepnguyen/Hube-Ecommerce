@@ -5,9 +5,10 @@ import CartItem from './components/CartItem';
 import style from './styles.module.scss';
 import ShopCartProduct from '../ShopCartProduct';
 
-import { Box, Checkbox, Stack } from '@mui/material';
+import { Box, Button, Checkbox, Stack } from '@mui/material';
 import { CartHeader } from '../SearchPage/components';
 import { fCurrency } from '../../utils';
+import { Link } from 'react-router-dom';
 const label = { inputProps: { 'aria-label': 'Checkbox all cart' } };
 
 const CartPage = () => {
@@ -31,7 +32,7 @@ const CartPage = () => {
           quantity: 1,
           image:
             'https://fptshop.com.vn/Uploads/Originals/2023/4/28/638182970630939004_samsung-galaxy-s23-plus-tim-dd-tragop.jpg',
-            selected: false,
+          selected: false,
         },
       ],
     },
@@ -45,7 +46,7 @@ const CartPage = () => {
           quantity: 1,
           image:
             'https://vn-live-01.slatic.net/p/d69a7f995f22f1977502301c4af7e112.png',
-            selected: false,
+          selected: false,
         },
         {
           id: 4,
@@ -54,27 +55,25 @@ const CartPage = () => {
           quantity: 1,
           image:
             'https://cdn.tgdd.vn/Products/Images/44/231244/macbook-air-m1-2020-gray-600x600.jpg',
-            selected: false,
+          selected: false,
         },
       ],
     },
   ];
 
-  const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState(0);
   const onSelected = (idxShop, listProductIdx) => {
-    let price = 0
-    cart.forEach((shop, idx)=>{
+    let price = 0;
+    cart.forEach((shop, idx) => {
       shop.products.forEach((product, idxProduct) => {
-        if(idx === idxShop && listProductIdx.includes(idxProduct)){
-          cart[idx].products[idxProduct].selected = true
-          price += Number(cart[idx].products[idxProduct].price) 
-        }
-        else
-          cart[idx].products[idxProduct].selected = false
-      })
-    })
-    setPrice(price)
-  }
+        if (idx === idxShop && listProductIdx.includes(idxProduct)) {
+          cart[idx].products[idxProduct].selected = true;
+          price += Number(cart[idx].products[idxProduct].price);
+        } else cart[idx].products[idxProduct].selected = false;
+      });
+    });
+    setPrice(price);
+  };
 
   return (
     <div className={style.cartContainer}>
@@ -93,14 +92,22 @@ const CartPage = () => {
           </Stack>
           <div className={style.listItem}>
             {cart.map((shop, idx) => (
-              <ShopCartProduct key={shop.shopName} shop={shop} idxShop={idx} onSelected={onSelected}/>
+              <ShopCartProduct
+                key={shop.shopName}
+                shop={shop}
+                idxShop={idx}
+                onSelected={onSelected}
+              />
             ))}
           </div>
           <div className={style.line}></div>
           <div className={style.totalContainer}>
             <h4>Tạm tính: {fCurrency(price)}</h4>
-            <h4>Gỉam giá: 0 VNĐ</h4>
+            <h4>Giảm giá: 0 VNĐ</h4>
             <h3>Tổng: {fCurrency(price)}</h3>
+            <Link to='/checkout'>
+              <Button sx={{mt: 1}} className={style.buyBtn}>Tiến hành thanh toán</Button>
+            </Link>
           </div>
         </div>
       </div>

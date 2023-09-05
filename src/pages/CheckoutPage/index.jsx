@@ -6,50 +6,35 @@ import cx from 'classnames';
 import { Button, Input } from 'antd';
 import CheckoutItem from './components/CheckoutItem';
 import CardItem from './components/CardItem';
+import { fCurrency } from '../../utils';
 
 const CheckoutPage = () => {
   const list = [
     {
       id: 1,
       name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
+      price: '16000000',
       quantity: 1,
       image:
         'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
     },
     {
       id: 2,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
+      name: 'Điện Thoại Samsung Galaxy A53',
+      price: '7950000',
       quantity: 1,
       image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
+        'https://fptshop.com.vn/Uploads/Originals/2023/4/28/638182970630939004_samsung-galaxy-s23-plus-tim-dd-tragop.jpg',
     },
     {
       id: 3,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
+      name: 'IPhone 14 Promax 512GB',
+      price: '26890000',
       quantity: 1,
       image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
-    },
-    {
-      id: 4,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
-      quantity: 1,
-      image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
-    },
-    {
-      id: 5,
-      name: 'Điện Thoại Samsung Galaxy S20 FE (8GB/256GB)',
-      price: '6.990.000',
-      quantity: 1,
-      image:
-        'https://salt.tikicdn.com/cache/750x750/ts/product/c6/54/f8/d35de848a3822e06338a0db67cee30e4.jpg.webp',
-    },
-  ];
+        'https://vn-live-01.slatic.net/p/d69a7f995f22f1977502301c4af7e112.png',
+    }
+  ]; 
 
   const listCard = [
     {
@@ -135,7 +120,7 @@ const CheckoutPage = () => {
                 placeholder='Ghi chú cho người bán'
                 width={100}
               />
-              <div className={style.total}>Tổng: 123.123.123 VNĐ</div>
+              <div className={style.total}>Tổng: {fCurrency(50840000)}</div>
             </div>
           </div>
           <div className={cx(style.box)}>
@@ -161,11 +146,11 @@ const CheckoutPage = () => {
             width={100}
           />
 
-          <div className={style.text}>Tiền hàng: 123.132.123 VNĐ</div>
+          <div className={style.text}>Tiền hàng: {fCurrency(50840000)}</div>
           <div className={style.text}>Giảm giá: 0 VNĐ</div>
-          <div className={style.text}>Phí giao hàng: 12.000 VNĐ</div>
+          <div className={style.text}>Phí giao hàng: {fCurrency(12000)}</div>
           <div className={cx(style.text, style.bold)}>
-            Tổng: 123.132.123 VNĐ
+            Tổng: {fCurrency(50840000 + 12000)}
           </div>
 
           <Button className={style.confirmButton}>
