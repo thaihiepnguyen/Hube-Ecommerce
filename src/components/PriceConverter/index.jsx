@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 
 const PriceConverter = (props) => {
-  const format = `${props.children}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  const format = `${props.children}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 
   return (
     <>
