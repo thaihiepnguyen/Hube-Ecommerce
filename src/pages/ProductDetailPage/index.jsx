@@ -22,6 +22,7 @@ import Tabs from "../../components/Tabs"
 import axios from "axios";
 import {decrement, increment} from "../../features/counter/counterSlice";
 
+
 const ProductDetailPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch()
@@ -45,9 +46,6 @@ const ProductDetailPage = () => {
     fetchData();
   }, [])
 
-  useEffect(() => {
-    fetchProduct();
-  }, []);
   const handleRenderRate = rate => {
     const result = [];
     for (let i = 0; i < rate; i++) {
@@ -58,6 +56,11 @@ const ProductDetailPage = () => {
     }
     return result;
   };
+
+  useEffect(() => {
+    fetchProduct();
+  }, []);
+
   return (
       <div style={{display: 'flex', flexDirection: 'column', overflowY: 'scroll', maxHeight: '100vh'}}>
         <Navbar/>
@@ -129,7 +132,8 @@ const ProductDetailPage = () => {
                 src="/static/media/avatar0.76df38dc900575ebe928.png" 
                 alt="avt" />
                 <div style={{marginLeft: 20}}>
-                  <h3>Đoàn Linh</h3>
+                  <h3 style={{marginBottom: 8}}>Đoàn Linh</h3>
+                  <div>{handleRenderRate(3.5)}</div>
                   <p>Điện thoại đẹp, màu sang lắm luôn. Tiki bảo mật khi mua hàng tốt và vận chuyển rất ổn. 
                     Mình có check cover dt chưa active và bắt đầu kích hoạt bảo hành ngay khi mình active máy. Chất lượng oke. 10 điểm cho Tiki ♥️</p>
                 </div>
@@ -141,7 +145,8 @@ const ProductDetailPage = () => {
                 src="/static/media/avatar0.76df38dc900575ebe928.png" 
                 alt="avt" />
                 <div style={{marginLeft: 20}}>
-                  <h3>Cao Thị Kiều Oanh</h3>
+                  <h3 style={{marginBottom: 8}}>Cao Thị Kiều Oanh</h3>
+                  <div>{handleRenderRate(4.5)}</div>
                   <p>Đóng gói chắc chắn có bọc lớp giấy bìa ở ngoài và 1 lớp giấy bóng nilong ngoài hộp, 
                     sản phẩm mới đẹp giá rẻ hơn 1tr so với mua ở cells hoặc mấy chỗ khác, giao nhanh, bảo mật khi giao hàng khi 
                     gửi mã về cho khách hàng</p>
@@ -154,7 +159,8 @@ const ProductDetailPage = () => {
                 src="/static/media/avatar0.76df38dc900575ebe928.png" 
                 alt="avt" />
                 <div style={{marginLeft: 20}}>
-                  <h3>Nguyễn Công Khanh</h3>
+                  <h3 style={{marginBottom: 8}}>Nguyễn Công Khanh</h3>
+                  <div>{handleRenderRate(4)}</div>
                   <p>Giao rất nhanh trong sáng là đã nhận được. Hàng rất đẹp, màu xanh trầm nhìn đẹp lắm. Hàng nguyên seal luôn, máy ngoại hình nhìn qua thấy ổn, đẹp.
                      Xài tầm vài ngày nữa mới biết nhưng ban đầu thấy ok rồi đó. Tiki đóng gói rất cẩn thận. Mình thấy rất hài lòng</p>
                 </div>
