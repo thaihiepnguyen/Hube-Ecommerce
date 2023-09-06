@@ -33,7 +33,7 @@ const ProductItem = (props) => {
           <PriceConverter>{price}</PriceConverter>
         </ParagraphBpdy>
         <Rating name="read-only" precision={0.5} value={rate} readOnly sx={{ my: 1 }} />
-        <ParagraphBpdy sx={{ mt: 1, justifyContent: "flex-end"}}>
+        <ParagraphBpdy sx={{ mt: 1, justifyContent: "flex-end"}}> 
           {address}
         </ParagraphBpdy>
       </CardContent>

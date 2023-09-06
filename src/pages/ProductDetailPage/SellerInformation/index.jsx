@@ -24,7 +24,7 @@ const SellerInformation = () => {
           </div>
         </div>
         <div style={{display: 'flex',  width: '700px'}}>
-            <Button borderColor={'#8A2BE2'} textColor={'#4B0082'} style={{width: '200px'}}>
+            <Button borderColor={'#8A2BE2'} textColor={'#4B0082'} style={{width: '200px'}} className={styles.followBtn}>
             <div style={{display: 'flex'}}>
               <Add/>
               <p style={{marginTop: 0, marginBottom: 0, marginLeft: 10}}>Theo dõi</p>
