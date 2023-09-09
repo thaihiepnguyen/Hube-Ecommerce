@@ -81,7 +81,7 @@ const CheckoutPage = () => {
     },
   ];
 
-  const [checkedIndex, setCheckedIndex] = useState(1);
+  const [checkedIndex, setCheckedIndex] = useState(0);
   console.log(checkedIndex)
   return (
     <div className={style.container}>
