@@ -11,8 +11,9 @@ import { fCurrency } from '../../utils';
 import QuantityInput from '../../components/QuantityInput';
 import { DeleteOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import ConfirmDialog from '../../components/ConfirmDeleteCartDialog';
+import PriceConverter from "../../components/PriceConverter";
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -80,8 +81,8 @@ const ShopCartProduct = props => {
                   />
                   <ProductNameCart>{product.name}</ProductNameCart>
                 </Stack>
-                <ProductPrice sx={{ width: '10%' }}>
-                  {fCurrency(product.price)}
+                <ProductPrice sx={{ width: '12%' }}>
+                  <div>{`${product.price}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} đ</div>
                 </ProductPrice>
                 <Box sx={{ width: '15%' }}>
                   <QuantityInput
@@ -92,7 +93,7 @@ const ShopCartProduct = props => {
                   />
                 </Box>
                 <ProductPrice sx={{ width: '15%', textAlign: 'center' }}>
-                  {fCurrency(product.price * product.quantity)}
+                  <div>{`${product.price * product.quantity}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} đ</div>
                 </ProductPrice>
                 <Button
                   onClick={() => setProductRemove(idx)}

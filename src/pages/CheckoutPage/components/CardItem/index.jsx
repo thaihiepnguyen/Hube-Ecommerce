@@ -1,12 +1,18 @@
 import React from 'react';
 import style from './styles.module.scss';
-import { Checkbox, Image } from 'antd';
+import {Image, Radio} from 'antd';
 
 const CardItem = props => {
   const { title, description, image } = props.item;
+  const { isChecked, setIndex } = props;
   return (
     <div className={style.container}>
-      <Checkbox className={style.checkbox} />
+      <input
+        type="radio"
+        className={style.checkbox}
+        checked={isChecked}
+        onChange={setIndex}
+      />
       <div className={style.title}>{title}</div>
       <div>{description}</div>
       <div className={style.imageContainer}>

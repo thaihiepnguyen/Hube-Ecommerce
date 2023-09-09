@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './styles.module.scss';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -80,6 +80,9 @@ const CheckoutPage = () => {
         'https://static.wixstatic.com/media/9d8ed5_810e9e3b7fad40eca3ec5087da674662~mv2.png/v1/fit/w_500,h_500,q_90/file.png',
     },
   ];
+
+  const [checkedIndex, setCheckedIndex] = useState(1);
+  console.log(checkedIndex)
   return (
     <div className={style.container}>
       <Navbar />
@@ -128,8 +131,8 @@ const CheckoutPage = () => {
               <div>Phương thức thanh toán</div>
             </div>
             <div className={style.listCard}>
-              {listCard.map(item => (
-                <CardItem key={item.id} item={item} />
+              {listCard.map((item ,index)=> (
+                <CardItem key={item.id} item={item} isChecked={checkedIndex === index} setIndex={()=>setCheckedIndex(index)} />
               ))}
             </div>
           </div>
